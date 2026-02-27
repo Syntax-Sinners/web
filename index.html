@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Syntax Sinners — Dev & Web Services</title>
+  <meta name="description" content="Syntax Sinners — design, build, and ship web apps. Freelance dev team." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">Syntax Sinners</a>
+      <nav class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#services">Hire Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>We build fast, polished web products.</h1>
+          <p class="lead">Syntax Sinners — a small freelance developer team crafting modern web apps, design systems, and APIs. We ship clean code and clear value.</p>
+          <p class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn btn-ghost" href="#services">See Services</a>
+          </p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff8a3d" />
+                <stop offset="1" stop-color="#ff4a00" />
+              </linearGradient>
+            </defs>
+            <rect rx="24" width="100%" height="100%" fill="url(#g1)"/>
+            <g fill="#fff" opacity="0.9">
+              <circle cx="420" cy="120" r="40" />
+              <rect x="80" y="220" width="280" height="12" rx="6" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container section">
+      <h2 class="section-title">Services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Web Apps</h3>
+          <p>Modern React/Vue/Svelte apps with performance-first architecture and testing.</p>
+        </article>
+        <article class="card">
+          <h3>Design & UI</h3>
+          <p>Interfaces, prototypes and design systems that scale with your product.</p>
+        </article>
+        <article class="card">
+          <h3>APIs & Backend</h3>
+          <p>Robust, documented APIs and server-side logic using Node, Python, or Go.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section team">
+      <h2 class="section-title">Our Team</h2>
+      <div class="team-grid">
+        <div class="person">
+          <div class="avatar">SS</div>
+          <strong>Ana</strong>
+          <small>Full-stack</small>
+        </div>
+        <div class="person">
+          <div class="avatar">RJ</div>
+          <strong>Raj</strong>
+          <small>Design</small>
+        </div>
+        <div class="person">
+          <div class="avatar">KJ</div>
+          <strong>Kai</strong>
+          <small>Backend</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section contact">
+      <h2 class="section-title">Get in touch</h2>
+      <p>Tell us about your project. We'll reply with scope, timeline, and estimate.</p>
+      <form class="contact-form" action="#" onsubmit="return false;">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Project details"></textarea>
+        <div class="form-actions">
+          <button class="btn btn-primary">Send message</button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Syntax Sinners — Built with care.</small>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
