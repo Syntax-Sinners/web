@@ -1,30 +1,20 @@
-// Theme toggle with persistence
-(function(){
-  const root = document.documentElement;
-  const toggle = document.getElementById('theme-toggle');
-  const yearEl = document.getElementById('year');
-  const KEY = 'ss_theme';
+const root = document.documentElement;
+const themeToggle = document.getElementById("themeToggle");
+const storedTheme = localStorage.getItem("syntax-theme");
 
-  function applyTheme(t){
-    if(t === 'dark') root.setAttribute('data-theme','dark');
-    else root.removeAttribute('data-theme');
-    toggle.textContent = t === 'dark' ? '🌙' : '☀️';
+if (storedTheme === "dark") {
+  root.setAttribute("data-theme", "dark");
+}
+
+themeToggle.addEventListener("click", () => {
+  const isDark = root.getAttribute("data-theme") === "dark";
+
+  if (isDark) {
+    root.removeAttribute("data-theme");
+    localStorage.setItem("syntax-theme", "light");
+    return;
   }
 
-  function init(){
-    yearEl.textContent = new Date().getFullYear();
-    const stored = localStorage.getItem(KEY);
-    if(stored){ applyTheme(stored); return; }
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(prefersDark ? 'dark' : 'light');
-  }
-
-  toggle.addEventListener('click', ()=>{
-    const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    localStorage.setItem(KEY, next);
-  });
-
-  init();
-})();
+  root.setAttribute("data-theme", "dark");
+  localStorage.setItem("syntax-theme", "dark");
+});

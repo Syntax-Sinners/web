@@ -1,115 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Syntax Sinners — Dev & Web Services</title>
-  <meta name="description" content="Syntax Sinners — design, build, and ship web apps. Freelance dev team." />
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syntax Sinners | Freelance Dev Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#">Syntax Sinners</a>
-      <nav class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#services">Hire Us</a>
-      </nav>
-    </div>
+    <a href="#" class="brand">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span>Syntax Sinners</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      <span class="sun">☀</span>
+      <span class="moon">☾</span>
+    </button>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>We build fast, polished web products.</h1>
-          <p class="lead">Syntax Sinners — a small freelance developer team crafting modern web apps, design systems, and APIs. We ship clean code and clear value.</p>
-          <p class="hero-ctas">
-            <a class="btn btn-primary" href="#contact">Start a Project</a>
-            <a class="btn btn-ghost" href="#services">See Services</a>
-          </p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#ff8a3d" />
-                <stop offset="1" stop-color="#ff4a00" />
-              </linearGradient>
-            </defs>
-            <rect rx="24" width="100%" height="100%" fill="url(#g1)"/>
-            <g fill="#fff" opacity="0.9">
-              <circle cx="420" cy="120" r="40" />
-              <rect x="80" y="220" width="280" height="12" rx="6" />
-            </g>
-          </svg>
-        </div>
+      <p class="eyebrow">Freelance Web Services</p>
+      <h1>We build fast, clean products that ship with zero drama.</h1>
+      <p class="hero-copy">Syntax Sinners is a compact developer team for startups and businesses that need polished websites, web apps, and backend APIs delivered on deadline.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="#projects" class="btn btn-ghost">See Our Work</a>
       </div>
+      <ul class="hero-stats">
+        <li><strong>70+</strong><span>Projects shipped</span></li>
+        <li><strong>24h</strong><span>Average response time</span></li>
+        <li><strong>99%</strong><span>Client retention</span></li>
+      </ul>
     </section>
 
-    <section id="services" class="container section">
-      <h2 class="section-title">Services</h2>
-      <div class="cards">
+    <section id="services" class="card-section">
+      <h2>Services</h2>
+      <div class="grid services-grid">
         <article class="card">
-          <h3>Web Apps</h3>
-          <p>Modern React/Vue/Svelte apps with performance-first architecture and testing.</p>
+          <h3>Landing Pages</h3>
+          <p>Conversion-focused pages with modern visuals, smooth interactions, and analytics built-in.</p>
         </article>
         <article class="card">
-          <h3>Design & UI</h3>
-          <p>Interfaces, prototypes and design systems that scale with your product.</p>
+          <h3>Full-Stack Apps</h3>
+          <p>Production-ready web apps using scalable architecture, secure auth, and clean deployments.</p>
         </article>
         <article class="card">
-          <h3>APIs & Backend</h3>
-          <p>Robust, documented APIs and server-side logic using Node, Python, or Go.</p>
+          <h3>API Development</h3>
+          <p>Reliable REST/GraphQL APIs with robust validation, caching, and detailed documentation.</p>
+        </article>
+        <article class="card">
+          <h3>Performance Upgrades</h3>
+          <p>Core Web Vitals optimization, codebase refactors, and speed fixes that actually move metrics.</p>
         </article>
       </div>
     </section>
 
-    <section class="container section team">
-      <h2 class="section-title">Our Team</h2>
-      <div class="team-grid">
-        <div class="person">
-          <div class="avatar">SS</div>
-          <strong>Ana</strong>
-          <small>Full-stack</small>
-        </div>
-        <div class="person">
-          <div class="avatar">RJ</div>
-          <strong>Raj</strong>
-          <small>Design</small>
-        </div>
-        <div class="person">
-          <div class="avatar">KJ</div>
-          <strong>Kai</strong>
-          <small>Backend</small>
-        </div>
+    <section id="process" class="card-section">
+      <h2>How We Work</h2>
+      <div class="grid process-grid">
+        <article class="step">
+          <span>01</span>
+          <h3>Scope</h3>
+          <p>We define outcomes, timelines, and non-negotiables in one focused session.</p>
+        </article>
+        <article class="step">
+          <span>02</span>
+          <h3>Build</h3>
+          <p>Weekly progress with demos, transparent milestones, and clean commits.</p>
+        </article>
+        <article class="step">
+          <span>03</span>
+          <h3>Launch</h3>
+          <p>Testing, deployment, documentation, and post-launch support included.</p>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="container section contact">
-      <h2 class="section-title">Get in touch</h2>
-      <p>Tell us about your project. We'll reply with scope, timeline, and estimate.</p>
-      <form class="contact-form" action="#" onsubmit="return false;">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="5" placeholder="Project details"></textarea>
-        <div class="form-actions">
-          <button class="btn btn-primary">Send message</button>
-          <button type="reset" class="btn btn-ghost">Reset</button>
-        </div>
-      </form>
+    <section id="projects" class="card-section">
+      <h2>Recent Wins</h2>
+      <div class="grid project-grid">
+        <article class="project-card">
+          <p class="tag">SaaS Platform</p>
+          <h3>MercuryOps Dashboard</h3>
+          <p>Rebuilt frontend and API layer, reducing load times by 48% and cutting support issues in half.</p>
+        </article>
+        <article class="project-card">
+          <p class="tag">E-commerce</p>
+          <h3>Ember & Oak Storefront</h3>
+          <p>Custom storefront with dynamic content blocks and checkout optimization that lifted conversion by 31%.</p>
+        </article>
+        <article class="project-card">
+          <p class="tag">Internal Tooling</p>
+          <h3>PulseFlow CRM Sync</h3>
+          <p>Automated data sync across systems, replacing manual workflows and saving 20+ hours/week.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-banner">
+      <div>
+        <p class="eyebrow">Let’s Build</p>
+        <h2>Need a developer team that ships without excuses?</h2>
+      </div>
+      <a href="mailto:hello@syntaxsinners.dev" class="btn btn-primary">hello@syntaxsinners.dev</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Syntax Sinners — Built with care.</small>
-      <nav class="footer-nav">
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <p>© 2026 Syntax Sinners. Crafted for teams that move fast.</p>
   </footer>
 
   <script src="script.js"></script>
