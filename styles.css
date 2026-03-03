@@ -832,32 +832,7 @@ main,
   color: rgba(255, 255, 255, 0.7);
 }
 
-.specialty-badge {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 0.25rem 0.75rem;
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-
-[data-theme="dark"] .specialty-badge {
-  background: rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.3);
-  color: #c7d2fe;
-}
-
-.team-card:hover .specialty-badge {
-  transform: translateY(-5px);
-  background: white;
-  color: var(--accent);
-}
+/* Specialty badges removed */
 
 .team-hover-info {
   max-height: 0;
@@ -901,48 +876,7 @@ main,
   transform: translateY(-2px);
 }
 
-.team-card-actions {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.team-card:hover .team-card-actions {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.action-btn {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.action-btn:hover {
-  background: white;
-  color: var(--accent);
-  transform: translateY(-5px) scale(1.05);
-  border-color: white;
-}
+/* Action buttons removed */
 
 
 .card p,
