@@ -19,44 +19,55 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("syntax-theme", "dark");
 });
 
-// Reveal team cards on scroll
-const teamCards = document.querySelectorAll(".team-card");
-if (teamCards.length) {
-  const isMobileTeamLayout = () => window.matchMedia("(max-width: 760px)").matches;
+// Scroll-based Hero Transitions
+const hero = document.querySelector('.hero');
+const header = document.querySelector('.site-header');
 
-  const setActiveTeamCard = () => {
-    if (isMobileTeamLayout()) {
-      teamCards.forEach((card) => card.classList.add("in-view"));
-      return;
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const threshold = 600; // Animation range in pixels
+  const progress = Math.max(0, Math.min(scrollY / threshold, 1));
+
+  if (hero) {
+    // Zoom in and push upward
+    const scale = 1 + progress * 0.5;
+    const translateY = progress * -250;
+    const opacity = 1 - progress * 1.5;
+
+    hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    hero.style.opacity = Math.max(0, opacity);
+
+    // Performance optimization: hide hero when fully scrolled past
+    if (progress >= 1) {
+      hero.style.visibility = 'hidden';
+    } else {
+      hero.style.visibility = 'visible';
     }
+  }
+});
 
-    const focusY = window.scrollY + window.innerHeight * 0.42;
-    let activeIndex = 0;
+// Intersection Observer for scroll animations
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-    teamCards.forEach((card, index) => {
-      const cardTop = window.scrollY + card.getBoundingClientRect().top;
-      if (focusY >= cardTop) activeIndex = index;
-    });
+const revealOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      // Optional: unobserve if you only want it to happen once
+      // observer.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove('in-view');
+    }
+  });
+}, observerOptions);
 
-    teamCards.forEach((card, index) => {
-      card.classList.toggle("in-view", index === activeIndex);
-    });
-  };
+document.querySelectorAll('.team-card').forEach(card => {
+  revealOnScroll.observe(card);
+});
 
-  let ticking = false;
-  const queueSetActiveTeamCard = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      setActiveTeamCard();
-      ticking = false;
-    });
-  };
-
-  setActiveTeamCard();
-  window.addEventListener("scroll", queueSetActiveTeamCard, { passive: true });
-  window.addEventListener("resize", queueSetActiveTeamCard);
-}
 
 // 3D tilt interaction for service cards
 const tiltCards = document.querySelectorAll(".service-card");
