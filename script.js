@@ -2,8 +2,11 @@ const root = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const storedTheme = localStorage.getItem("syntax-theme");
 
-if (storedTheme === "dark") {
+// Initialize theme
+if (storedTheme === "dark" || (!storedTheme && root.getAttribute("data-theme") === "dark")) {
   root.setAttribute("data-theme", "dark");
+} else {
+  root.removeAttribute("data-theme");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -12,11 +15,10 @@ themeToggle.addEventListener("click", () => {
   if (isDark) {
     root.removeAttribute("data-theme");
     localStorage.setItem("syntax-theme", "light");
-    return;
+  } else {
+    root.setAttribute("data-theme", "dark");
+    localStorage.setItem("syntax-theme", "dark");
   }
-
-  root.setAttribute("data-theme", "dark");
-  localStorage.setItem("syntax-theme", "dark");
 });
 
 // Scroll-based Hero Transitions

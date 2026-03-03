@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -84,111 +84,90 @@
     </section>
 
     <section id="team" class="team-showcase">
-      <div class="team-grid">
-        <article class="team-card">
-          <div class="team-media tone-sumit">
-            <div class="media-orb"></div>
-            <img
-              src="https://api.dicebear.com/9.x/adventurer/png?seed=Sumit&backgroundType=gradientLinear&backgroundColor=fde7cc,ffd0a3&radius=24"
-              alt="Sumit" loading="lazy">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Sumit Srivastawa</h3>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Lead Developer</h4>
-                <p>Architecting scalable solutions with precision and performance in mind.</p>
+      <div class="section-container">
+        <header class="team-header">
+          <h2 class="team-title">The Creative Power Behind</h2>
+          <span class="team-subtitle">Syntax Sinners</span>
+        </header>
+        <div class="team-grid">
+          <article class="team-card tone-sumit">
+            <div class="team-media">
+              <img src="assets/core team 1.png" alt="Sumit" loading="lazy">
+              <div class="team-card-actions">
+                <button class="action-btn">✦</button>
+                <button class="action-btn">→</button>
               </div>
             </div>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Infrastructure Guru</h4>
-                <p>Managing production-ready deployments and cloud architecture.</p>
+            <div class="team-content">
+              <span class="specialty-badge">Core Dev</span>
+              <h3 class="team-name">Sumit Srivastawa</h3>
+              <p class="team-role">Lead Developer</p>
+              <div class="team-hover-info">
+                <p class="team-desc">Architecting robust systems and leading the technical vision for Syntax Sinners.
+                </p>
+                <button class="details-btn">See Details</button>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="team-card">
-          <div class="team-media tone-shiv">
-            <div class="media-orb"></div>
-            <img
-              src="https://api.dicebear.com/9.x/adventurer/png?seed=Shiv&backgroundType=gradientLinear&backgroundColor=fde7cc,ffd0a3&radius=24"
-              alt="Shiv" loading="lazy">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Shiv Kaushal</h3>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Frontend Specialist</h4>
-                <p>Building immersive, responsive, and high-performance web interfaces.</p>
+          <article class="team-card tone-shiv">
+            <div class="team-media">
+              <img src="assets/core team 2.png" alt="Shiv" loading="lazy">
+              <div class="team-card-actions">
+                <button class="action-btn">✦</button>
+                <button class="action-btn">→</button>
               </div>
             </div>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Animation Expert</h4>
-                <p>Crafting smooth micro-interactions that delight users.</p>
+            <div class="team-content">
+              <span class="specialty-badge">UI Wizard</span>
+              <h3 class="team-name">Shiv Kaushal</h3>
+              <p class="team-role">Frontend Specialist</p>
+              <div class="team-hover-info">
+                <p class="team-desc">Crafting pixel-perfect, immersive interfaces with cutting-edge technologies.</p>
+                <button class="details-btn">See Details</button>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="team-card">
-          <div class="team-media tone-aditya">
-            <div class="media-orb"></div>
-            <img
-              src="https://api.dicebear.com/9.x/adventurer/png?seed=Aditya&backgroundType=gradientLinear&backgroundColor=fde7cc,ffd0a3&radius=24"
-              alt="Aditya" loading="lazy">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Aditya Singh</h3>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Full Stack Engineer</h4>
-                <p>Delivering end-to-end features with modern tech stacks.</p>
+          <article class="team-card tone-aditya">
+            <div class="team-media">
+              <img src="assets/core team 3.png" alt="Aditya" loading="lazy">
+              <div class="team-card-actions">
+                <button class="action-btn">✦</button>
+                <button class="action-btn">→</button>
               </div>
             </div>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Database Architect</h4>
-                <p>Optimizing data flows and query performance for scale.</p>
+            <div class="team-content">
+              <span class="specialty-badge">System Architect</span>
+              <h3 class="team-name">Aditya Singh</h3>
+              <p class="team-role">Full Stack Engineer</p>
+              <div class="team-hover-info">
+                <p class="team-desc">Specializing in end-to-end product development and scalable cloud solutions.</p>
+                <button class="details-btn">See Details</button>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="team-card">
-          <div class="team-media tone-avinash">
-            <div class="media-orb"></div>
-            <img
-              src="https://api.dicebear.com/9.x/adventurer/png?seed=Avinash&backgroundType=gradientLinear&backgroundColor=fde7cc,ffd0a3&radius=24"
-              alt="Avinash" loading="lazy">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Avinash Kumar</h3>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>UI/UX Engineer</h4>
-                <p>Transforming complex requirements into intuitive user journeys.</p>
+          <article class="team-card tone-avinash">
+            <div class="team-media">
+              <img src="assets/core team 4.png" alt="Avinash" loading="lazy">
+              <div class="team-card-actions">
+                <button class="action-btn">✦</button>
+                <button class="action-btn">→</button>
               </div>
             </div>
-            <div class="team-point">
-              <span class="point-icon">✦</span>
-              <div class="point-text">
-                <h4>Prototyping Lead</h4>
-                <p>Rapidly turning ideas into interactive, testable mockups.</p>
+            <div class="team-content">
+              <span class="specialty-badge">UX Strategist</span>
+              <h3 class="team-name">Avinash Kumar</h3>
+              <p class="team-role">UI/UX Engineer</p>
+              <div class="team-hover-info">
+                <p class="team-desc">Optimizing user journeys and creating seamless human-computer interactions.</p>
+                <button class="details-btn">See Details</button>
               </div>
             </div>
-          </div>
-        </article>
-      </div>
+          </article>
+        </div> <!-- team-grid -->
+      </div> <!-- section-container -->
     </section>
 
     <section id="services" class="services-showcase">
