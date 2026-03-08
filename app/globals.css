@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(252, 59, 0, 0.34), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(255, 113, 69, 0.22), transparent 28%),
+    linear-gradient(180deg, #050505 0%, #000000 60%);
+  min-height: 100vh;
+}
+
+.glass-card {
+  @apply rounded-2xl border border-white/15 bg-white/[0.04] backdrop-blur-lg;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-6 py-16 md:px-10;
+}
+
+.text-gradient {
+  background: linear-gradient(125deg, #ff7145 0%, #ff6129 45%, #fc3b00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
