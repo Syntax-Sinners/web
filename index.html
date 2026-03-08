@@ -1,330 +1,732 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syntax Sinners | Engineering Collective</title>
+    <meta
+      name="description"
+      content="Developers building real software systems. SaaS platforms, backend systems, and production dashboards."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syntax Sinners | Freelance Dev Team</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="bg-gradient"></div>
 
-<body>
-  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-3" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a href="#" class="brand">
-      <span class="brand-mark">&lt;/&gt;</span>
-      <span>Syntax Sinners</span>
-    </a>
-
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#team">Team</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#" class="logo"> <span>&lt;/&gt;</span> Syntax Sinners </a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#team">Team</a>
+      </div>
+      <div class="flex items-center gap-4 nav-actions">
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Toggle color theme"
+          title="Toggle light/dark"
+        >
+          <span class="theme-toggle-icon" data-theme-icon>☀</span>
+        </button>
+        <a
+          href="#contact"
+          class="btn btn-primary"
+          style="padding: 8px 16px; font-size: 0.85rem"
+          >Start Project</a
+        >
+        <button class="mobile-menu-btn">☰</button>
+      </div>
     </nav>
 
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-      <span class="sun">☀</span>
-      <span class="moon">☾</span>
-    </button>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="hero-badge">
+        <span>●</span>
+        <span class="hero-badge-text" data-text="Available for new Q3 engagements"
+          >Available for new Q3 engagements</span
+        >
+      </div>
+      <h1 class="text-gradient">
+        We build the <span class="text-gradient-orange">backend</span> of your
+        business.
+      </h1>
+      <p>
+        Syntax Sinners is an independent engineering collective. We design and
+        ship production-grade SaaS platforms, operational dashboards, and
+        scalable backend systems used by real companies.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#work" class="btn btn-primary">View Systems</a>
+        <a href="#contact" class="btn btn-secondary">Talk to Engineers</a>
+      </div>
 
-  <main>
-    <section class="hero glass-hero">
-      <div class="glass-panel hero-panel">
-        <div class="hero-left">
-          <div class="profile-chip" aria-label="Syntax Sinners team intro">
-            <span class="avatar-stack" aria-hidden="true">
-              <span class="avatar avatar-a">S</span>
-              <span class="avatar avatar-b">SK</span>
-              <span class="avatar avatar-c">AS</span>
-              <span class="avatar avatar-d">AK</span>
-            </span>
-            <p>Sumit Srivastawa, Shiv Kaushal, Aditya Singh, Avinash Kumar</p>
-          </div>
-
-          <p class="eyebrow">Developer Team Portfolio</p>
-          <h1>Developers building modern <span class="hero-highlight">products</span> for web and mobile.</h1>
-          <p class="hero-copy">Syntax Sinners crafts websites, admin portals, APIs, architecture, and production-ready
-            apps for fast-moving teams.</p>
-
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Start a Project</a>
-            <a href="#team" class="btn btn-ghost">Meet The Team</a>
-          </div>
-
-          <ul class="hero-stats">
-            <li><strong>4</strong><span>Specialist developers</span></li>
-            <li><strong>Apps + Web</strong><span>End-to-end delivery</span></li>
-            <li><strong>Architecture</strong><span>Built for scale</span></li>
-          </ul>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <strong>4,500+</strong>
+          <span>Active Users</span>
         </div>
-
-        <div class="hero-right" aria-hidden="true">
-          <div class="hero-orb"></div>
-          <div class="coder-figure">
-            <div class="figure-head"></div>
-            <div class="figure-body"></div>
-            <div class="figure-laptop"></div>
-          </div>
-          <div class="floating-card card-one">Web Apps</div>
-          <div class="floating-card card-two">API + Admin</div>
-          <div class="floating-card card-three">UI + UX</div>
+        <div class="stat-item">
+          <strong>99.9%</strong>
+          <span>Uptime SLA</span>
+        </div>
+        <div class="stat-item">
+          <strong>15+</strong>
+          <span>Enterprise Deploys</span>
         </div>
       </div>
     </section>
 
-    <section id="team" class="team-showcase">
-      <div class="section-container">
-        <header class="team-header">
-          <h2 class="team-title">The Creative Power Behind</h2>
-          <span class="team-subtitle">Syntax Sinners</span>
-        </header>
-        <div class="team-grid">
-          <article class="team-card tone-sumit">
-            <div class="team-media">
-              <img src="assets/core team 1.png" alt="Sumit" loading="lazy">
-
-            </div>
-            <div class="team-content">
-              <div class="team-info">
-                <h3 class="team-name">Sumit Srivastawa</h3>
-                <p class="team-role">Lead Developer</p>
-              </div>
-              <div class="team-bio">
-                <p class="team-desc">Architecting robust systems and leading the technical vision for Syntax Sinners.
-                </p>
-                <button class="details-btn">See Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="team-card tone-shiv">
-            <div class="team-media">
-              <img src="assets/core team 2.png" alt="Shiv" loading="lazy">
-
-            </div>
-            <div class="team-content">
-              <div class="team-info">
-                <h3 class="team-name">Shiv Kaushal</h3>
-                <p class="team-role">Frontend Specialist</p>
-              </div>
-              <div class="team-bio">
-                <p class="team-desc">Crafting pixel-perfect, immersive interfaces with cutting-edge technologies.</p>
-                <button class="details-btn">See Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="team-card tone-aditya">
-            <div class="team-media">
-              <img src="assets/core team 3.png" alt="Aditya" loading="lazy">
-            </div>
-            <div class="team-content">
-              <div class="team-info">
-                <h3 class="team-name">Aditya Singh</h3>
-                <p class="team-role">Full Stack Engineer</p>
-              </div>
-              <div class="team-bio">
-                <p class="team-desc">Specializing in end-to-end product development and scalable cloud solutions.</p>
-                <button class="details-btn">See Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="team-card tone-avinash">
-            <div class="team-media">
-              <img src="assets/core team 4.png" alt="Avinash" loading="lazy">
-            </div>
-            <div class="team-content">
-              <div class="team-info">
-                <h3 class="team-name">Avinash Kumar</h3>
-                <p class="team-role">UI/UX Engineer</p>
-              </div>
-              <div class="team-bio">
-                <p class="team-desc">Optimizing user journeys and creating seamless human-computer interactions.</p>
-                <button class="details-btn">See Details</button>
-              </div>
-            </div>
-          </article>
-        </div> <!-- team-grid -->
-      </div> <!-- section-container -->
-    </section>
-
-    <section id="services" class="services-showcase">
-      <div class="services-shell">
-        <div class="services-pill">Services</div>
-        <h2 class="services-title">What we ship for fast-moving teams</h2>
-        <p class="services-lead">Product-minded engineers delivering launch-ready web experiences, admin tools, APIs,
-          and performance wins.</p>
-
-        <div class="grid luxe-services-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">💻</div>
-            <h3>Landing Pages</h3>
-            <p>High-converting marketing ksites with sharp UX, fast loads, and analytics baked in from day one.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🛠️</div>
-            <h3>Web &amp; Admin Apps</h3>
-            <p>Production-ready dashboards and internal tools with role-based access, clean data flows, and
-              auditability.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🔌</div>
-            <h3>APIs &amp; Integrations</h3>
-            <p>Reliable REST/GraphQL services with validation, caching, observability, and third-party integrations.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">⚡</div>
-            <h3>Performance Upgrades</h3>
-            <p>Core Web Vitals fixes, bundle trims, and architecture tuning that measurably speed up your product.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="card-section">
-      <h2>How We Work</h2>
-      <div class="grid process-grid">
-        <article class="step">
-          <span>01</span>
-          <h3>Scope</h3>
-          <p>We define outcomes, timelines, and non-negotiables in one focused session.</p>
-        </article>
-        <article class="step">
-          <span>02</span>
-          <h3>Build</h3>
-          <p>Weekly progress with demos, transparent milestones, and clean commits.</p>
-        </article>
-        <article class="step">
-          <span>03</span>
-          <h3>Launch</h3>
-          <p>Testing, deployment, documentation, and post-launch support included.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="card-section">
-      <h2>Recent Wins</h2>
-      <div class="grid project-grid">
-        <article class="project-card">
-          <p class="tag">SaaS Platform</p>
-          <h3>MercuryOps Dashboard</h3>
-          <p>Rebuilt frontend and API layer, reducing load times by 48% and cutting support issues in half.</p>
-        </article>
-        <article class="project-card">
-          <p class="tag">E-commerce</p>
-          <h3>Ember & Oak Storefront</h3>
-          <p>Custom storefront with dynamic content blocks and checkout optimization that lifted conversion by 31%.</p>
-        </article>
-        <article class="project-card">
-          <p class="tag">Internal Tooling</p>
-          <h3>PulseFlow CRM Sync</h3>
-          <p>Automated data sync across systems, replacing manual workflows and saving 20+ hours/week.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-banner">
-      <div>
-        <p class="eyebrow">Let’s Build</p>
-        <h2>Need a developer team that ships without excuses?</h2>
-      </div>
-      <a href="mailto:hello@syntaxsinners.dev" class="btn btn-primary">hello@syntaxsinners.dev</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-shell glass-panel">
-      <div class="trusted-row" aria-label="Trusted brands">
-        <span>AMAZON</span>
-        <span>MCKESSON</span>
-        <span>JOHNSON &amp; JOHNSON</span>
-        <span>DELL</span>
-        <span>MERCK</span>
-      </div>
-
-      <section class="footer-cta">
-        <div>
-          <h2>Build with a developer team that actually ships.</h2>
-          <p>From websites and admin portals to APIs and app architecture, we help teams launch confidently.</p>
-          <div class="footer-cta-actions">
-            <a href="#contact" class="btn btn-primary">Start Project</a>
-            <a href="#services" class="btn btn-ghost">Our Services</a>
-          </div>
-        </div>
-        <div class="footer-cta-mark" aria-hidden="true">SS</div>
-      </section>
-
-      <div class="footer-columns">
-        <section>
-          <h3>Useful Links</h3>
-          <a href="#team">About Team</a>
-          <a href="#contact">Contact Us</a>
-          <a href="#projects">Case Studies</a>
-          <a href="#contact">Privacy Policy</a>
-        </section>
-        <section>
-          <h3>Services</h3>
-          <a href="#services">Website Development</a>
-          <a href="#services">Admin Portals</a>
-          <a href="#services">API Development</a>
-          <a href="#services">App Development</a>
-        </section>
-        <section>
-          <h3>Resources</h3>
-          <a href="#process">Process</a>
-          <a href="#projects">Recent Wins</a>
-          <a href="#contact">Support</a>
-          <a href="#contact">Newsletter</a>
-        </section>
-        <section class="subscribe-block">
-          <h3>Subscribe</h3>
-          <p>Get product build tips, launch notes, and updates from Syntax Sinners.</p>
-          <form class="subscribe-form" action="#" method="post">
-            <label for="subscribeEmail" class="sr-only">Email address</label>
-            <input id="subscribeEmail" type="email" name="email" placeholder="Enter your email" />
-            <button type="submit">Subscribe</button>
-          </form>
-          <small>By subscribing, you agree to our privacy policy.</small>
-        </section>
-      </div>
-
-      <div class="footer-divider" aria-hidden="true"></div>
-
-      <div class="footer-bottom">
-        <p class="footer-brand">Syntax Sinners.</p>
-        <div class="social-links" aria-label="Social links">
-          <a href="#contact" aria-label="Facebook">Fb</a>
-          <a href="#contact" aria-label="Instagram">Ig</a>
-          <a href="#contact" aria-label="LinkedIn">In</a>
-          <a href="#contact" aria-label="YouTube">Yt</a>
-        </div>
-      </div>
-
-      <div class="footer-legal">
-        <p>Privacy Policy</p>
-        <p>Terms of Service</p>
-        <p>Cookie Policy</p>
-        <p>© 2026 Syntax Sinners. All rights reserved.</p>
+    <!-- Tech Stack Marquee -->
+    <div class="tech-stack">
+      <div class="tech-track">
+        <!-- Duplicated for infinite scroll effect -->
+        <div class="tech-item">⚛️ React / Next.js</div>
+        <div class="tech-item">🐍 Python / Django</div>
+        <div class="tech-item">🔷 Flutter</div>
+        <div class="tech-item">🟢 Node.js</div>
+        <div class="tech-item">🐳 Docker</div>
+        <div class="tech-item">☁️ AWS</div>
+        <div class="tech-item">🗄️ PostgreSQL</div>
+        <div class="tech-item">⚛️ React / Next.js</div>
+        <div class="tech-item">🐍 Python / Django</div>
+        <div class="tech-item">🔷 Flutter</div>
+        <div class="tech-item">🟢 Node.js</div>
+        <div class="tech-item">🐳 Docker</div>
+        <div class="tech-item">☁️ AWS</div>
+        <div class="tech-item">🗄️ PostgreSQL</div>
       </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Capabilities (Bento Grid) -->
+    <section id="services" class="section-padding container">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERING CAPABILITIES</span>
+        <h2 class="section-title">
+          Production software, <br />not demo projects.
+        </h2>
+        <p class="section-desc">
+          We don't just write code. We architect systems designed for scale,
+          security, and maintainability.
+        </p>
+      </div>
 
+      <div class="grid capabilities-grid">
+        <div class="cap-card large bento-priority">
+          <div class="cap-icon">🏗️</div>
+          <div>
+            <h3>Multi-Tenant SaaS Architecture</h3>
+            <p>
+              Robust database isolation, role-based access control (RBAC), and
+              scalable API design built for thousands of concurrent users.
+            </p>
+          </div>
+        </div>
+        <div class="cap-card bento-top-right">
+          <div class="cap-icon">📊</div>
+          <div>
+            <h3>Operational Dashboards</h3>
+            <p>
+              Real-time data visualization and admin panels that give businesses
+              control over their workflows.
+            </p>
+          </div>
+        </div>
+        <div class="cap-card bento-mid-left">
+          <div class="cap-icon">📱</div>
+          <div>
+            <h3>Mobile Ecosystems</h3>
+            <p>
+              Native and cross-platform mobile applications (Flutter/React
+              Native) integrated seamlessly with backend APIs.
+            </p>
+          </div>
+        </div>
+        <div class="cap-card bento-mid-right">
+          <div class="cap-icon">🔌</div>
+          <div>
+            <h3>API Integrations</h3>
+            <p>
+              Connecting your business tools. Payment gateways, CRMs, and
+              third-party services.
+            </p>
+          </div>
+        </div>
+        <div class="cap-card large bento-infra">
+          <div class="cap-icon">🛡️</div>
+          <div>
+            <h3>Backend Infrastructure & DevOps</h3>
+            <p>
+              CI/CD pipelines, containerization, cloud deployment
+              (AWS/DigitalOcean), and automated monitoring systems to keep your
+              software running 24/7.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="section-padding container">
+      <div class="section-header">
+        <span class="section-tag">SELECTED WORK</span>
+        <h2 class="section-title">
+          Real systems built for <br />real businesses.
+        </h2>
+      </div>
+
+      <div class="projects-stack">
+        <!-- Project 1: PhysioEZ Desktop -->
+        <article class="project-row" style="--accent-color: #10b981">
+          <div class="project-info-card">
+            <div class="project-number">01</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-team">Industrial Suite</span>
+            <h3>PhysioEZ Desktop</h3>
+            <p>
+              A high-concurrency clinic management engine designed for
+              healthcare scale. Specialized in real-time synchronization and
+              secure patient data warehousing.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> Multi-tenant PostgreSQL architecture</li>
+              <li><i>•</i> Real-time WebSocket sync protocol</li>
+              <li><i>•</i> RBAC / HIPAA-compliant audit logs</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                  <span class="dev-orb" title="Avinash Kumar">AK</span>
+                  <span class="dev-orb" title="Shiv Kaushal">SK</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">3 Specialists</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="browser-mockup">
+                <div class="browser-nav">
+                  <div class="window-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="address-bar">physioez.app/dashboard</div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: PhysioEZ Mobile -->
+        <article class="project-row" style="--accent-color: #10b981">
+          <div class="project-info-card">
+            <div class="project-number">02</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-personal">Mobile Extension</span>
+            <h3>PhysioEZ Mobile</h3>
+            <p>
+              The mobile extension of the PhysioEZ bridge. Engineered for
+              low-latency data access and offline-ready patient management.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> Flutter-based cross-platform engine</li>
+              <li><i>•</i> Local-first SQLite data persistence</li>
+              <li><i>•</i> Biometric hardware authentication</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">Lead Architect</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="mobile-mockup">
+                <div class="browser-nav">
+                  <div class="dynamic-island"></div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: InnerCircle Loyalty -->
+        <article class="project-row" style="--accent-color: #ff6129">
+          <div class="project-info-card">
+            <div class="project-number">03</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-personal">Fintech Ledger</span>
+            <h3>InnerCircle Loyalty</h3>
+            <p>
+              A multi-tenant decentralized loyalty ledger. Built for café
+              networks requiring millisecond transaction settlements and high
+              availability.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> QR-based transaction handshake</li>
+              <li><i>•</i> Distributed points ledger system</li>
+              <li><i>•</i> Real-time merchant telemetry</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">Lead Architect</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="mobile-mockup">
+                <div class="browser-nav">
+                  <div class="dynamic-island"></div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Hisab-Kitab Ledger -->
+        <article class="project-row" style="--accent-color: #3b82f6">
+          <div class="project-info-card">
+            <div class="project-number">04</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-personal">Financial Systems</span>
+            <h3>Hisab-Kitab Ledger</h3>
+            <p>
+              A professional-grade financial tracking system for distributed
+              agents. Replaces traditional ledgers with an atomic, secured
+              digital transaction log.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> Atomic transaction processing</li>
+              <li><i>•</i> Automated reconciliation engine</li>
+              <li><i>•</i> PDF export & encrypted sharing</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">Lead Architect</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="mobile-mockup">
+                <div class="browser-nav">
+                  <div class="dynamic-island"></div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: RoomOS Suite -->
+        <article class="project-row" style="--accent-color: #8b5cf6">
+          <div class="project-info-card">
+            <div class="project-number">05</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-team">Operational Engine</span>
+            <h3>RoomOS Operational Suite</h3>
+            <p>
+              B2B logistics platform for commercial spaces. Orchestrates
+              real-time bookings, facility IoT integrations, and automated
+              billing cycles.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> IoT access control integration</li>
+              <li><i>•</i> Stripe-integrated recurring billing</li>
+              <li><i>•</i> Dynamic resource allocation logic</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                  <span class="dev-orb" title="Aditya Singh">AS</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">Full Stack Team</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="mobile-mockup">
+                <div class="browser-nav">
+                  <div class="dynamic-island"></div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Prospine Admin -->
+        <article class="project-row" style="--accent-color: #ec4899">
+          <div class="project-info-card">
+            <div class="project-number">06</div>
+            <div class="project-status">
+              <span class="status-dot"></span>
+              Deploy Status: Active Production
+            </div>
+            <span class="badge badge-personal">Admin Analytics</span>
+            <h3>Prospine Admin Console</h3>
+            <p>
+              The central nervous system for production monitoring. Handles
+              high-frequency system telemetry and distributed log visualization.
+            </p>
+            <ul class="feature-list">
+              <li><i>•</i> Real-time system health dashboard</li>
+              <li><i>•</i> Distributed log aggregation engine</li>
+              <li><i>•</i> Alert-manager & PagerDuty integration</li>
+            </ul>
+            <div class="project-cta-group">
+              <div class="dev-cluster">
+                <div class="dev-stack">
+                  <span class="dev-orb" title="Sumit Srivastava">SS</span>
+                </div>
+                <div class="dev-meta">
+                  <span class="dev-title">Engineering Team</span>
+                  <span class="dev-count">Lead Architect</span>
+                </div>
+              </div>
+              <a href="#" class="explore-link">System View <i>→</i></a>
+            </div>
+          </div>
+          <div class="project-visual-wrapper">
+            <div class="screenshot-container">
+              <div class="browser-mockup">
+                <div class="browser-nav">
+                  <div class="window-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="address-bar">prospine.internal/admin</div>
+                </div>
+                <div class="viewport">
+                  <div class="aura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section-padding container">
+      <div class="process-layout">
+        <div class="process-copy">
+          <span class="section-tag">HOW WE WORK</span>
+          <h2 class="section-title">
+            From concept to <br />production deployment.
+          </h2>
+          <p class="process-lead">
+            We follow an agile, engineering-first methodology. No bloated
+            project management, just clear milestones and working software.
+          </p>
+
+          <div class="process-steps" role="list">
+            <article
+              class="process-step active"
+              role="button"
+              tabindex="0"
+              data-step="1"
+            >
+              <div class="process-step-index">1</div>
+              <div>
+                <h4>Discovery & Audit</h4>
+                <p>
+                  We analyze your requirements and existing infrastructure to
+                  propose the most efficient architecture.
+                </p>
+              </div>
+            </article>
+            <article
+              class="process-step"
+              role="button"
+              tabindex="0"
+              data-step="2"
+            >
+              <div class="process-step-index">2</div>
+              <div>
+                <h4>Sprint Development</h4>
+                <p>
+                  2-week sprints with deployable builds at the end of every
+                  cycle. You see progress constantly.
+                </p>
+              </div>
+            </article>
+            <article
+              class="process-step"
+              role="button"
+              tabindex="0"
+              data-step="3"
+            >
+              <div class="process-step-index">3</div>
+              <div>
+                <h4>Launch & Scale</h4>
+                <p>
+                  Production deployment, monitoring setup, and handover
+                  documentation.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="process-panel">
+          <p class="process-panel-tag mono" id="processFile">deploy.ts</p>
+          <pre
+            class="process-code mono"
+          ><code id="processCode"><span class="code-accent">const</span> deploySystem = <span class="code-accent">async</span> () =&gt; {
+  <span class="code-muted">// Initialize infrastructure</span>
+  await infra.provision();
+  await db.migrate();
+
+  <span class="code-muted">// Deploy to production</span>
+  return <span class="code-ok">"System Online"</span>;
+};</code></pre>
+          <div class="process-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding container">
+      <div class="section-header" style="text-align: center">
+        <span class="section-tag">THE COLLECTIVE</span>
+        <h2 class="section-title">The engineers behind the code.</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">SS</div>
+          <span class="team-role">Lead Developer</span>
+          <h3>Sumit Srivastava</h3>
+          <p
+            style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px"
+          >
+            System Architecture & Backend Vision
+          </p>
+          <a class="team-link" href="/dev/sumit-srivastava">View Profile</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">SK</div>
+          <span class="team-role">Frontend Specialist</span>
+          <h3>Shiv Kaushal</h3>
+          <p
+            style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px"
+          >
+            UI Engineering & Interactive Experiences
+          </p>
+          <a class="team-link" href="/dev/shiv-kaushal">View Profile</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AS</div>
+          <span class="team-role">Full Stack Engineer</span>
+          <h3>Aditya Singh</h3>
+          <p
+            style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px"
+          >
+            Cloud Solutions & API Integration
+          </p>
+          <a class="team-link" href="/dev/aditya-singh">View Profile</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AK</div>
+          <span class="team-role">UI / UX Engineer</span>
+          <h3>Avinash Kumar</h3>
+          <p
+            style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px"
+          >
+            Product Design & User Flows
+          </p>
+          <a class="team-link" href="/dev/avinash-kumar">View Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="section-padding cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="section-title" style="font-size: 3rem">
+            Need engineers who actually ship?
+          </h2>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 1.2rem;
+              margin: 24px 0 40px;
+            "
+          >
+            From SaaS platforms to business dashboards, we design and build
+            production software systems used by real companies.
+          </p>
+          <a
+            href="mailto:hello@syntaxsinners.dev"
+            class="btn btn-primary"
+            style="padding: 16px 32px; font-size: 1.1rem"
+            >Start a Conversation</a
+          >
+          <p
+            style="margin-top: 16px; font-size: 0.9rem; color: var(--text-dim)"
+          >
+            Usually respond within 24 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container site-footer">
+      <div class="footer-shell">
+        <div class="footer-hero">
+          <h3>Start Shipping Production Software in Just 4 Weeks</h3>
+          <form class="footer-lead-form" action="#" method="get">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              aria-label="Your email address"
+              required
+            />
+            <button type="submit">Get Started</button>
+          </form>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-brand">
+            <p>
+              Syntax Sinners designs and ships production-grade systems for
+              teams that need robust software without bloated process.
+            </p>
+            <a href="#" class="logo footer-logo">
+              <span>&lt;/&gt;</span> Syntax Sinners
+            </a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Home</h4>
+            <ul>
+              <li><a href="#services">About</a></li>
+              <li><a href="#services">Benefits</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#team">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#team">Career</a></li>
+              <li><a href="#work">Blog</a></li>
+              <li><a href="#process">Support Center</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Social Media</h4>
+            <div class="footer-socials" aria-label="Social media links">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.4" cy="6.6" r="1" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M14.5 8.5h2V5h-2.3c-2.8 0-4.2 1.6-4.2 4.4V12H7v3.4h3v3.6h3.5v-3.6h2.6L16.7 12h-3.2V9.8c0-.8.3-1.3 1.2-1.3z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="X">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 4l16 16M20 4L4 20" />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect x="3" y="7" width="18" height="10" rx="3" />
+                  <path d="M10 9.5l5 2.5-5 2.5z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>Syntax Sinners</span>
+          <span>&copy; 2026 All rights reserved</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,114 +1,165 @@
-const root = document.documentElement;
-const themeToggle = document.getElementById("themeToggle");
-const storedTheme = localStorage.getItem("syntax-theme");
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.querySelector('[data-theme-icon]');
+    const nav = document.querySelector('.navbar');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const heroBadgeText = document.querySelector('.hero-badge-text');
 
-// Initialize theme
-if (storedTheme === "dark" || (!storedTheme && root.getAttribute("data-theme") === "dark")) {
-  root.setAttribute("data-theme", "dark");
-} else {
-  root.removeAttribute("data-theme");
-}
+    const applyTheme = (theme) => {
+        const isDark = theme !== 'light';
+        root.classList.toggle('dark', isDark);
+        if (themeIcon) {
+            themeIcon.textContent = isDark ? '☀' : '🌙';
+        }
+    };
 
-themeToggle.addEventListener("click", () => {
-  const isDark = root.getAttribute("data-theme") === "dark";
-
-  if (isDark) {
-    root.removeAttribute("data-theme");
-    localStorage.setItem("syntax-theme", "light");
-  } else {
-    root.setAttribute("data-theme", "dark");
-    localStorage.setItem("syntax-theme", "dark");
-  }
-});
-
-// Scroll-based Hero Transitions
-const hero = document.querySelector('.hero');
-const header = document.querySelector('.site-header');
-
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  const threshold = 600; // Animation range in pixels
-  const progress = Math.max(0, Math.min(scrollY / threshold, 1));
-
-  if (hero) {
-    // Zoom in and push upward
-    const scale = 1 + progress * 0.5;
-    const translateY = progress * -250;
-    const opacity = 1 - progress * 1.5;
-
-    hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-    hero.style.opacity = Math.max(0, opacity);
-
-    // Performance optimization: hide hero when fully scrolled past
-    if (progress >= 1) {
-      hero.style.visibility = 'hidden';
+    const storedTheme = localStorage.getItem('syntax-theme');
+    if (storedTheme) {
+        applyTheme(storedTheme);
     } else {
-      hero.style.visibility = 'visible';
+        applyTheme('dark');
     }
-  }
-});
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.2,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const revealOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      // Optional: unobserve if you only want it to happen once
-      // observer.unobserve(entry.target);
-    } else {
-      entry.target.classList.remove('in-view');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
+            localStorage.setItem('syntax-theme', nextTheme);
+            applyTheme(nextTheme);
+        });
     }
-  });
-}, observerOptions);
 
-document.querySelectorAll('.team-card').forEach(card => {
-  revealOnScroll.observe(card);
-});
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('mobile-open');
+        });
 
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-open');
+            });
+        });
+    }
 
-// 3D tilt interaction for service cards
-const tiltCards = document.querySelectorAll(".service-card");
-tiltCards.forEach((card) => {
-  let frame;
+    // Reveal animations
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px',
+        }
+    );
 
-  const reset = () => {
-    card.style.setProperty("--rx", "0deg");
-    card.style.setProperty("--ry", "0deg");
-    card.classList.remove("tilt-active");
-  };
+    document
+        .querySelectorAll('.cap-card, .project-card, .team-card, .process-panel')
+        .forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(18px)';
+            el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+            observer.observe(el);
+        });
 
-  const handleMove = (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const midX = rect.width / 2;
-    const midY = rect.height / 2;
-    const rotY = ((x - midX) / midX) * 8; // left/right
-    const rotX = -((y - midY) / midY) * 6; // up/down
+    // Navbar scroll state
+    const syncNavState = () => {
+        nav.classList.toggle('scrolled', window.scrollY > 48);
+    };
+    window.addEventListener('scroll', syncNavState, { passive: true });
+    syncNavState();
 
-    if (frame) cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => {
-      card.style.setProperty("--ry", `${rotY.toFixed(2)}deg`);
-      card.style.setProperty("--rx", `${rotX.toFixed(2)}deg`);
+    if (heroBadgeText) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const fullText = (heroBadgeText.dataset.text || heroBadgeText.textContent || '').trim();
+
+        if (!prefersReducedMotion && fullText) {
+            let charIndex = 0;
+            let isDeleting = false;
+
+            const typeSpeed = 75;
+            const deleteSpeed = 45;
+            const holdAtEnd = 1300;
+            const holdAtStart = 450;
+
+            const tick = () => {
+                if (!isDeleting) {
+                    charIndex = Math.min(charIndex + 1, fullText.length);
+                    heroBadgeText.textContent = fullText.slice(0, charIndex);
+
+                    if (charIndex === fullText.length) {
+                        isDeleting = true;
+                        window.setTimeout(tick, holdAtEnd);
+                        return;
+                    }
+
+                    window.setTimeout(tick, typeSpeed);
+                    return;
+                }
+
+                charIndex = Math.max(charIndex - 1, 0);
+                heroBadgeText.textContent = fullText.slice(0, charIndex);
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    window.setTimeout(tick, holdAtStart);
+                    return;
+                }
+
+                window.setTimeout(tick, deleteSpeed);
+            };
+
+            heroBadgeText.textContent = '';
+            window.setTimeout(tick, 500);
+        } else {
+            heroBadgeText.textContent = fullText;
+        }
+    }
+
+    // Interactive Process Steps
+    const processFile = document.getElementById('processFile');
+    const processCode = document.getElementById('processCode');
+    const processSteps = Array.from(document.querySelectorAll('.process-step[data-step]'));
+
+    const processSnippets = {
+        1: {
+            file: 'audit.ts',
+            code: `<span class="code-accent">const</span> discovery = <span class="code-accent">async</span> () =&gt; {\n  <span class="code-muted">// Review requirements + constraints</span>\n  await product.audit();\n  await infra.review();\n\n  <span class="code-muted">// Output: implementation blueprint</span>\n  <span class="code-accent">return</span> architecture.plan;\n};`
+        },
+        2: {
+            file: 'sprint.ts',
+            code: `<span class="code-accent">const</span> sprintCycle = <span class="code-accent">async</span> () =&gt; {\n  <span class="code-muted">// Build in 2-week milestones</span>\n  await features.implement();\n  await qa.verify();\n\n  <span class="code-muted">// Ship demo-ready increment</span>\n  <span class="code-accent">return</span> release.candidate;\n};`
+        },
+        3: {
+            file: 'deploy.ts',
+            code: `<span class="code-accent">const</span> deploySystem = <span class="code-accent">async</span> () =&gt; {\n  <span class="code-muted">// Initialize infrastructure</span>\n  await infra.provision();\n  await db.migrate();\n\n  <span class="code-muted">// Deploy to production</span>\n  <span class="code-accent">return</span> <span class="code-ok">\"System Online\"</span>;\n};`
+        }
+    };
+
+    const setProcessStep = (stepId) => {
+        processSteps.forEach((step) => {
+            step.classList.toggle('active', step.dataset.step === stepId);
+        });
+
+        const snippet = processSnippets[stepId];
+        if (!snippet || !processFile || !processCode) return;
+        processFile.textContent = snippet.file;
+        processCode.innerHTML = snippet.code;
+    };
+
+    processSteps.forEach((step) => {
+        step.addEventListener('click', () => setProcessStep(step.dataset.step));
+        step.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                setProcessStep(step.dataset.step);
+            }
+        });
     });
-  };
-
-  const handleEnter = () => {
-    card.classList.add("tilt-active");
-  };
-
-  const handleLeave = () => {
-    reset();
-  };
-
-  card.addEventListener("mousemove", handleMove);
-  card.addEventListener("mouseenter", handleEnter);
-  card.addEventListener("mouseleave", handleLeave);
-  card.addEventListener("touchstart", reset);
-  card.addEventListener("touchend", reset);
 });
