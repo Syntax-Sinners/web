@@ -85,6 +85,25 @@ body {
     radial-gradient(circle at 15% 50%, var(--bg-glow-a), transparent 25%),
     radial-gradient(circle at 85% 30%, var(--bg-glow-b), transparent 25%);
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 106, 0, 0.1), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  opacity: 0.9;
+}
+
+.service-card:hover::after {
+  opacity: 1;
 }
 
 /* Typography */
@@ -447,6 +466,28 @@ h4 {
   transition: all 0.3s var(--ease);
   position: relative;
   overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.2rem;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-media {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 20px 45px rgba(255, 106, 0, 0.2);
+}
+
+.team-card:hover .team-media::after {
+  opacity: 1;
 }
 
 .cap-card::before {
