@@ -54,31 +54,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Reveal animations
-    const observer = new IntersectionObserver(
+    // Enhanced Scroll Reveal System
+    const revealObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
                 }
             });
         },
         {
-            threshold: 0.12,
-            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px',
         }
     );
 
-    document
-        .querySelectorAll('.cap-card, .project-card, .team-card, .process-panel')
-        .forEach((el) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(18px)';
-            el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-            observer.observe(el);
-        });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+        if (el.dataset.revealDelay) {
+            el.style.transitionDelay = el.dataset.revealDelay;
+        }
+        revealObserver.observe(el);
+    });
 
     // Navbar scroll state
     const syncNavState = () => {
@@ -158,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
         processSteps.forEach((step) => {
             step.classList.toggle('active', step.dataset.step === stepId);
         });
+
+        const commandCenter = document.querySelector('.command-center');
+        if (commandCenter) {
+            commandCenter.setAttribute('data-visual-state', stepId);
+        }
 
         const snippet = processSnippets[stepId];
         if (!snippet || !processFile || !processCode) return;
