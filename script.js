@@ -13,6 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (themeIcon) {
             themeIcon.textContent = isDark ? '☀' : '🌙';
         }
+
+        // Project Screenshot Switching
+        const projectImages = document.querySelectorAll('.project-screenshot');
+        projectImages.forEach(img => {
+            const lightSrc = img.getAttribute('data-light');
+            const darkSrc = img.getAttribute('data-dark');
+            if (isDark && darkSrc) {
+                img.src = darkSrc;
+            } else if (!isDark && lightSrc) {
+                img.src = lightSrc;
+            }
+        });
     };
 
     const storedTheme = localStorage.getItem('syntax-theme');

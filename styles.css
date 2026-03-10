@@ -5,6 +5,7 @@
 :root {
   /* Brand Colors */
   --primary: #ff6129;
+  --primary-rgb: 255, 97, 41; /* Added for RGBA usage */
   --primary-hover: #fc3b00;
   --primary-glow: rgba(255, 97, 41, 0.4);
 
@@ -29,8 +30,8 @@
   /* Utilities */
   --radius-sm: 6px;
   --radius-md: 12px;
-  --radius-lg: 24px;
-  --container: 1200px;
+  --radius-lg: 32px;
+  --container: 1400px;
 
   /* Transitions */
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
@@ -142,13 +143,26 @@ h4 {
 
 /* Layout Utilities */
 .container {
-  max-width: var(--container);
+  max-width: 100%; /* Remove fixed width restriction */
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 5%; /* Flexible gutters */
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 140px 5%; /* Full width section padding */
+}
+
+#hero.container {
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+
+#services.section-padding,
+.section-header2,
+#process.section-padding,
+#team.section-padding{
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .grid {
@@ -539,65 +553,75 @@ h4 {
 }
 
 .project-row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center; /* Center horizontally/vertically */
+  display: flex;
+  justify-content: space-between; /* Spread them to the edges of the container */
+  align-items: center;
   position: relative;
-  min-height: 800px; 
-  gap: 100px; /* Massive explicit gap */
+  width: 100%;
+  padding: 100px 0;
+  gap: 0;
+}
+
+/* Desktop Style Project - Cinematic 70/30 or 65/35 Split */
+.desktop-project .project-info-card {
+  flex: 0 0 32%; /* Increased from 25% for more space */
+}
+
+.desktop-project .project-visual-wrapper {
+  flex: 0 0 65%; /* Adjusted slightly for balance */
+}
+
+/* Mobile Style Project - Balanced 50/40 Split */
+.mobile-project .project-info-card {
+  flex: 0 0 40%;
+}
+
+.mobile-project .project-visual-wrapper {
+  flex: 0 0 50%;
 }
 
 .project-info-card {
-  grid-column: 1 / 8; /* 7 columns wide - HUGE WIDTH */
-  grid-row: 1;
-  background: var(--bg-surface-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 48px;
-  padding: 80px; 
+  background: var(--bg-surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  padding: 60px; /* Massively increased padding */
   z-index: 20;
-  box-shadow: none !important;
   transition: all 0.5s var(--ease);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 32px; /* Increased gap between elements */
   position: relative;
-  width: 100%; /* Fill the 7 columns */
 }
 
 .project-visual-wrapper {
-  grid-column: 9 / 13; /* Starts at 9, creating 1-column gap from card */
-  grid-row: 1;
   position: relative;
   transition: all 0.6s var(--ease);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-/* Alternating Layout - ABSOLUTE SEPARATION */
-.project-row:nth-child(even) .project-info-card {
-  grid-column: 6 / 13; /* Info card on the right */
+.project-row:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.project-row:nth-child(even) .project-visual-wrapper {
-  grid-column: 1 / 5; /* Visual on the left */
+/* Alternating Layout - Flip for balance */
+.project-row:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-/* Hover fixes: Substantial shadow only on hover */
+/* Simple hover animations for work section */
 .project-row:hover .project-info-card {
-  transform: translateY(-15px);
-  background: rgba(var(--bg-rgb), 0.95);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
   border-color: var(--primary);
-  box-shadow: 0 60px 100px -20px rgba(0, 0, 0, 0.5) !important;
 }
 
-.project-row:hover .project-visual-wrapper {
-  transform: scale(1.05); /* Increased zoom for impact */
+.project-row:hover .screenshot-container {
+  transform: scale(1.015);
+  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.35);
 }
 
 /* Project Numbering - Subtle Background Watermark */
@@ -621,25 +645,46 @@ h4 {
   right: -20px;
 }
 
-/* Card Elements */
-.project-status {
-  display: flex;
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 12px;
+  border-radius: 100px;
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: -10px;
+  letter-spacing: 0.05em;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.status-badge.live {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.status-badge.halted {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.status-badge.dev {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 12px var(--primary);
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
 }
 
 .project-info-card h3 {
@@ -658,11 +703,37 @@ h4 {
 }
 
 .feature-list {
-  display: grid;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   list-style: none;
+}
+
+.project-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0; /* Remove margin as requested */
+  opacity: 0.9;
+}
+
+.tech-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: rgba(var(--primary-rgb), 0.08); /* Unified discrete pill */
+  padding: 4px 12px; /* Slightly tighter */
+  border-radius: 6px;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(var(--primary-rgb), 0.15);
+  border-color: rgba(var(--primary-rgb), 0.3);
 }
 
 .feature-list li {
@@ -681,14 +752,18 @@ h4 {
 }
 
 .project-cta-group {
-  margin-top: auto; /* Push to bottom */
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 32px;
+  /* padding-top: 40px; */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap; /* Prevent ugly wrap */
-  gap: 20px;
+  gap: 40px; /* Extreme gap for breathing room */
+}
+
+.dev-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Space between title and count */
 }
 
 /* Engineering Dev Stack */
@@ -753,45 +828,51 @@ h4 {
 /* Immersive Screen Wrapper - Removed White Border/Gradient */
 .screenshot-container {
   position: relative;
-  border-radius: 40px;
-  padding: 0; /* Removed padding that caused white border */
-  box-shadow: 0 100px 150px -50px rgba(0, 0, 0, 0.8);
+  border-radius: 32px; /* Increased border radius */
+  padding: 0;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.25); /* Lighter shadow */
   transition: all 0.6s var(--ease);
 }
 
 .browser-mockup {
-  background: #000;
-  border-radius: 40px;
+  background: #fff;
+  border-radius: 32px; /* Increased border radius */
   overflow: hidden;
   width: 100%; 
-  max-width: 1000px; /* Larger max, but no min-width to avoid overlap */
+  max-width: 100%; 
   aspect-ratio: 16 / 10;
   display: flex;
   flex-direction: column;
-  border: 4px solid #111;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+html.dark .browser-mockup {
+  background: #000;
+  border-color: #1a1a1b;
 }
 
 /* New Mobile Device Mockup - Generic */
 .mobile-mockup {
-  background: #000;
-  border-radius: 48px;
+  /* background: #fff; */
+  border-radius: 15px;
   overflow: hidden;
   width: 100%;
-  max-width: 420px; /* Robust size but responsive */
-  aspect-ratio: 9 / 18.5;
-  display: flex;
-  flex-direction: column;
-  border: 12px solid #1a1a1a;
-  position: relative;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+  max-width: 380px; 
+  /* aspect-ratio: 9 / 21; Increased again to give absolute max vertical space for docks */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* border: 4px solid #333; */
+  /* position: relative; */
+  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  /* padding: 4px; */
 }
 
+
 .mobile-mockup .browser-nav {
-  height: 40px; /* Small status area */
-  justify-content: center;
-  padding: 0;
-  background: transparent;
-  border: none;
+  display: none; /* Mobile apps start from the very top */
+  /* padding: 5px; */
 }
 
 .dynamic-island {
@@ -807,13 +888,12 @@ h4 {
 }
 
 .browser-nav {
-  height: 44px;
-  background: rgba(17, 24, 39, 0.8);
-  backdrop-filter: blur(12px);
+  height: 32px;
+  background: #111;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  gap: 20px;
+  padding: 0 16px;
+  gap: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -829,32 +909,44 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
 .viewport {
   flex: 1;
   position: relative;
-  background: #0a0e1a;
+  /* background: #fff; */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+html.dark .viewport {
+  background: #000;
+}
+
+.mobile-mockup .viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill the portrait frame width */
+  object-position: top center; /* Ensure head/top is always visible */
+  display: block;
 }
 
 .aura {
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  background: var(--accent-color);
-  filter: blur(120px);
-  opacity: 0.2;
-  pointer-events: none;
+  display: none; /* Removed gradient aura */
 }
 
 .viewport::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-  background-size: 24px 24px;
+  display: none; /* Removed background grid/gradient */
 }
 
 .explore-link {
@@ -1127,6 +1219,8 @@ h4 {
 /* Footer */
 .site-footer {
   padding: 32px 0 44px;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .footer-shell {
@@ -1334,9 +1428,14 @@ h4 {
 
   .project-row,
   .project-row:nth-child(even) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 40px;
     direction: ltr; /* Reset direction for mobile stacking */
+  }
+
+  .project-info-card,
+  .project-visual-wrapper {
+    flex: auto;
   }
 
   .project-info .section-title {
