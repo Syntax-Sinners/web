@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhysioEZ Platform | Syntax Sinners</title>
+    <meta
+      name="description"
+      content="PhysioEZ platform overview: product vision, role-based workflows, and live demo access."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles/physio-desktop.css" />
+  </head>
+  <body class="product-page">
+    <div class="bg-gradient"></div>
+
+    <nav class="navbar">
+      <a href="../index.html" class="logo">
+        <span>&lt;/&gt;</span> Syntax Sinners
+      </a>
+      <div class="nav-links">
+        <a href="#hero">Overview</a>
+        <a href="#roles">Roles</a>
+        <a href="#why">Vision</a>
+      </div>
+      <div class="flex items-center gap-4 nav-actions">
+        <div class="nav-status" title="PhysioEZ platform live">
+          <span class="dot"></span>
+          Platform Live
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-toggle-icon" data-theme-icon>☀</span>
+        </button>
+        <button class="btn btn-primary" type="button" data-open-demo>
+          Try Live Demo
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section id="hero" class="hero-shell container">
+        <div class="hero-copy" data-reveal="up">
+          <span class="hero-kicker">PHYSIOEZ PLATFORM</span>
+          <h1>Built for modern clinic operations.</h1>
+          <p>
+            A modular clinic platform for daily workflows, clear operations, and
+            reliable scale by <span class="brand-accent">Syntax Sinners</span>.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="button" data-open-demo>
+              Try Live Demo
+            </button>
+            <a href="mailto:srisumit96@gmail.com" class="btn btn-secondary"
+              >Book Walkthrough</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal="up" data-reveal-delay="0.2s">
+          <div class="screen-card">
+            <div class="screen-head">
+              <span></span><span></span><span></span>
+              <p class="mono">platform.physioez</p>
+            </div>
+            <img
+              src="../assets/img/physioez.png"
+              data-light="../assets/img/physioez.png"
+              data-dark="../assets/img/dark/PhysioEZ-dark.png"
+              alt="PhysioEZ platform interface"
+              class="project-screenshot"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-ribbon container" data-reveal="up">
+        <p class="proof-ribbon-title">
+          BUILT FOR PHYSIOTHERAPY AND REHABILITATION CLINICS
+        </p>
+        <div class="proof-ribbon-tags">
+          <span>Physiotherapy</span>
+          <span>Chiropractic</span>
+          <span>Rehabilitation</span>
+          <span>Orthopedic</span>
+          <span>Sports Medicine</span>
+        </div>
+      </section>
+
+      <section class="proof-stats container" data-reveal="up">
+        <p class="proof-stats-kicker">
+          Trusted by healthcare teams running active operations
+        </p>
+        <h2>Trusted by Healthcare Professionals</h2>
+        <p>
+          Clinics use PhysioEZ to streamline reception, treatment tracking,
+          billing, and reporting in one connected system.
+        </p>
+        <div class="proof-stats-grid">
+          <article>
+            <strong>2</strong>
+            <span>Clinic Live</span>
+          </article>
+          <article>
+            <strong>500+</strong>
+            <span>Patients Managed</span>
+          </article>
+          <article>
+            <strong>100%</strong>
+            <span>Platform Uptime</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="roles" class="role-shell container section-padding">
+        <div class="section-header" data-reveal="up">
+          <span class="section-tag">ROLE SYSTEM</span>
+          <h2 class="section-title">
+            Built for Clinics, by Healthcare Experts.
+          </h2>
+          <p class="section-desc">
+            Role-specific workflows that keep front desk, management, and
+            finance teams aligned inside one platform.
+          </p>
+        </div>
+
+        <div class="role-flow-box" data-reveal="up" data-reveal-delay="0.1s">
+          <div class="role-toggle-wrap">
+            <div
+              class="role-toggle"
+              role="tablist"
+              aria-label="Role mode toggle"
+            >
+              <button
+                type="button"
+                class="active"
+                data-role-mode="clinic"
+                role="tab"
+                aria-selected="true"
+              >
+                Clinic Staff
+              </button>
+              <button
+                type="button"
+                data-role-mode="management"
+                role="tab"
+                aria-selected="false"
+              >
+                Management
+              </button>
+            </div>
+          </div>
+
+          <div class="role-stage" aria-live="polite">
+            <svg
+              class="role-lines"
+              viewBox="0 0 1000 1000"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <marker
+                  id="roleArrowEnd"
+                  markerWidth="8"
+                  markerHeight="8"
+                  refX="7"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path
+                    d="M0,0 L8,4 L0,8 Z"
+                    fill="rgba(255, 97, 41, 0.4)"
+                  ></path>
+                </marker>
+                <marker
+                  id="roleArrowStart"
+                  markerWidth="8"
+                  markerHeight="8"
+                  refX="1"
+                  refY="4"
+                  orient="auto-start-reverse"
+                >
+                  <path
+                    d="M0,0 L8,4 L0,8 Z"
+                    fill="rgba(255, 97, 41, 0.4)"
+                  ></path>
+                </marker>
+              </defs>
+
+              <!-- Mesh Connections (Bidirectional Mesh) -->
+              <path
+                class="role-line"
+                d="M250 120 Q 50 120, 50 400"
+                fill="none"
+              ></path>
+              <!-- Top <-> Left -->
+              <path
+                class="role-line"
+                d="M750 120 Q 950 120, 950 400"
+                fill="none"
+              ></path>
+              <!-- Top <-> Right -->
+              <path
+                class="role-line"
+                d="M250 880 Q 50 880, 50 600"
+                fill="none"
+              ></path>
+              <!-- Bottom <-> Left -->
+              <path
+                class="role-line"
+                d="M750 880 Q 950 880, 950 600"
+                fill="none"
+              ></path>
+              <!-- Bottom <-> Right -->
+
+              <path class="role-line" d="M500 280 L 500 720" fill="none"></path>
+              <!-- Top <-> Bottom -->
+              <path class="role-line" d="M280 500 L 720 500" fill="none"></path>
+              <!-- Left <-> Right -->
+            </svg>
+
+            <div class="role-layout is-active" data-role-content="clinic">
+              <article class="role-card card-top-center">
+                <h4>Clinic Owners and Directors</h4>
+                <p>
+                  Complete visibility into clinic operations with
+                  dashboard-level control and real-time performance context.
+                </p>
+                <ul>
+                  <li>Real-time revenue tracking</li>
+                  <li>Multi-branch operational view</li>
+                  <li>Financial reports and analytics</li>
+                  <li>Secure data governance controls</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-full" type="button" data-open-demo>
+                    Get Started ➔
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-mid-left">
+                <h4>Receptionists</h4>
+                <p>
+                  Streamlined daily workflows for patient intake and front-desk
+                  operations.
+                </p>
+                <ul>
+                  <li>Quick patient registration</li>
+                  <li>Appointment scheduling</li>
+                  <li>Attendance tracking</li>
+                  <li>Bill generation</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-outline">View Features</button>
+                  <button class="btn btn-primary" data-open-demo>
+                    Try Now
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-mid-right">
+                <h4>Billing and Accounts</h4>
+                <p>
+                  Complete payment tracking and financial monitoring with
+                  minimal manual work.
+                </p>
+                <ul>
+                  <li>Payment collection</li>
+                  <li>Dues management</li>
+                  <li>Expense tracking</li>
+                  <li>Export reports</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-outline">View Features</button>
+                  <button class="btn btn-primary" data-open-demo>
+                    Try Now
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-bottom-center">
+                <h4>Clinic Administrators</h4>
+                <p>
+                  Oversight tools for staffing, scheduling, inquiries, and
+                  cross-clinic execution.
+                </p>
+                <ul>
+                  <li>Patient inquiry management</li>
+                  <li>Scheduling and rescheduling</li>
+                  <li>Task and billing supervision</li>
+                  <li>Notifications and alerts</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-full" type="button" data-open-demo>
+                    Get Started ➔
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <div class="role-layout" data-role-content="management">
+              <article class="role-card card-top-center">
+                <h4>Admin and Governance</h4>
+                <p>
+                  Central command for policy controls, access governance, and
+                  platform-wide reliability.
+                </p>
+                <ul>
+                  <li>Role-based access policies</li>
+                  <li>Global system configuration</li>
+                  <li>Compliance and audit logs</li>
+                  <li>Security baseline enforcement</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-full" type="button" data-open-demo>
+                    Get Started ➔
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-mid-left">
+                <h4>Branch Operations</h4>
+                <p>
+                  Branch-level visibility for staffing, productivity, and
+                  improvement cycles.
+                </p>
+                <ul>
+                  <li>Branch performance</li>
+                  <li>Staff management</li>
+                  <li>Operational analytics</li>
+                  <li>Issue escalation tracking</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-outline">View Features</button>
+                  <button class="btn btn-primary" data-open-demo>
+                    Try Now
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-mid-right">
+                <h4>Finance Leadership</h4>
+                <p>
+                  Consolidated financial planning and controls across clinics
+                  and reporting periods.
+                </p>
+                <ul>
+                  <li>Revenue analytics</li>
+                  <li>Ledger management</li>
+                  <li>Expense tracking</li>
+                  <li>Monthly reporting exports</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-outline">View Features</button>
+                  <button class="btn btn-primary" data-open-demo>
+                    Try Now
+                  </button>
+                </div>
+              </article>
+
+              <article class="role-card card-bottom-center">
+                <h4>Network Operations</h4>
+                <p>
+                  Cross-branch command view for risk signals, planning, and
+                  sustained execution quality.
+                </p>
+                <ul>
+                  <li>Consolidated dashboards</li>
+                  <li>Risk alerts</li>
+                  <li>Planning insights</li>
+                  <li>Rollout and compliance tracking</li>
+                </ul>
+                <div class="role-card-footer">
+                  <button class="btn btn-full" type="button" data-open-demo>
+                    Get Started ➔
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <div class="core-node" aria-label="PhysioEZ core platform">
+              <div class="core-node-inner">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="48"
+                  height="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="why-shell container section-padding">
+        <div class="section-header" data-reveal="up">
+          <span class="section-tag">VISION AND MOTIVATION</span>
+          <h2 class="section-title">Why PhysioEZ Exists</h2>
+          <p class="section-desc">
+            <span style="font-weight: 700; color: var(--primary);">PhysioEZ</span> was built to solve the operational chaos inside growing
+            clinics. One platform that connects patients, doctors, staff, and
+            clinic operations.
+          </p>
+        </div>
+
+        <div class="vision-quote" data-reveal="up" data-reveal-delay="0.05s">
+          <p style="text-align: center;">
+            Clinics should not run on spreadsheets, notebooks, and disconnected
+            tools. <br />
+           <span style="font-weight: 700; color: var(--primary);">PhysioEZ</span> brings the entire clinic workflow into one unified system.
+          </p>
+        </div>
+
+        <div class="insight-strip">
+          <article class="insight-pill" data-reveal="up">
+            <h3>Vision</h3>
+            <p>One connected operating layer for complete clinic workflows.</p>
+          </article>
+
+          <article
+            class="insight-pill"
+            data-reveal="up"
+            data-reveal-delay="0.1s"
+          >
+            <h3>Motivation</h3>
+            <p>
+              Replace fragmented systems with one shared, reliable platform.
+            </p>
+          </article>
+
+          <article
+            class="insight-pill"
+            data-reveal="up"
+            data-reveal-delay="0.2s"
+          >
+            <h3>Platform Direction</h3>
+            <p>A modular system designed to support 12+ clinic operations.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+   <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div class="footer-hero">
+          <div class="footer-hero-content">
+            <span class="footer-hero-tag">ACCELERATE YOUR ROADMAP</span>
+            <h3>Start Shipping Production Software <br />in Just 4 Weeks</h3>
+            <form class="footer-lead-form" action="#" method="get">
+              <div class="input-glow-wrapper">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  aria-label="Your email address"
+                  required
+                />
+                <div class="input-focus-glow"></div>
+              </div>
+              <button type="submit">Get Started <i>→</i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="#" class="logo footer-logo">
+              <span>&lt;/&gt;</span> Syntax Sinners
+            </a>
+            <p>
+              An elite engineering collective dedicated to building
+              high-performance SaaS, robust cloud backends, and mission-critical
+              internal tools.
+            </p>
+            <div class="footer-status-pill">
+              <span class="status-dot-green"></span>
+              Systems Operational
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#work">Custom SaaS</a></li>
+              <li><a href="#services">Cloud Backends</a></li>
+              <li><a href="#process">Infrastructure Audit</a></li>
+              <li><a href="#work">Internal Tooling</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Collective</h4>
+            <ul>
+              <li><a href="#work">Featured Work</a></li>
+              <li><a href="#process">The Process</a></li>
+              <li><a href="#team">Lead Engineers</a></li>
+              <li><a href="mailto:srisumit96@gmail.com">Engage Team</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-socials" aria-label="Social media links">
+              <!-- <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                  />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a> -->
+              <a
+                href="https://github.com/Syntax-Sinners"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  />
+                </svg>
+              </a>
+              <!-- <a href="#" aria-label="X">
+                <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" /></svg>
+              </a> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <span>&copy; 2026 Syntax Sinners. All rights reserved.</span>
+          </div>
+          <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="demoModal"
+      class="demo-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="demoModalTitle"
+      aria-hidden="true"
+    >
+      <div class="demo-modal-overlay" data-close-demo></div>
+      <div class="demo-modal-panel">
+        <button
+          class="demo-close"
+          type="button"
+          data-close-demo
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <p class="demo-label mono">LIVE DEMO ACCESS</p>
+        <h3 id="demoModalTitle">PhysioEZ Demo Account</h3>
+        <p>
+          Use these credentials to explore the live platform. If access fails,
+          contact us for a fresh account.
+        </p>
+
+        <div class="demo-credentials">
+          <div>
+            <span>Demo ID</span>
+            <code>physioez.demo</code>
+          </div>
+          <div>
+            <span>Password</span>
+            <code>Demo@1234</code>
+          </div>
+        </div>
+
+        <div class="demo-actions">
+          <a
+            class="btn btn-primary"
+            href="https://physioez.app"
+            target="_blank"
+            rel="noreferrer"
+            >Open Live App</a
+          >
+          <a class="btn btn-secondary" href="mailto:srisumit96@gmail.com"
+            >Request Private Demo</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("demoModal");
+        const openButtons = document.querySelectorAll("[data-open-demo]");
+        const closeButtons = document.querySelectorAll("[data-close-demo]");
+
+        if (!modal) return;
+
+        const openModal = () => {
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+        };
+
+        const closeModal = () => {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("modal-open");
+        };
+
+        openButtons.forEach((btn) => {
+          btn.addEventListener("click", openModal);
+        });
+
+        closeButtons.forEach((btn) => {
+          btn.addEventListener("click", closeModal);
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal.classList.contains("is-open")) {
+            closeModal();
+          }
+        });
+
+        const roleModeButtons = document.querySelectorAll("[data-role-mode]");
+        const roleContentBlocks = document.querySelectorAll(
+          "[data-role-content]",
+        );
+
+        const setRoleMode = (mode) => {
+          roleModeButtons.forEach((button) => {
+            const active = button.dataset.roleMode === mode;
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-selected", String(active));
+          });
+
+          roleContentBlocks.forEach((block) => {
+            block.classList.toggle(
+              "is-active",
+              block.dataset.roleContent === mode,
+            );
+          });
+        };
+
+        roleModeButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            setRoleMode(button.dataset.roleMode);
+          });
+        });
+
+        setRoleMode("clinic");
+      });
+    </script>
+  </body>
+</html>
