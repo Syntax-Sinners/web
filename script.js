@@ -176,4 +176,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Counter Animation System
+    const countObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.dataset.count, 10);
+                    const suffix = target.dataset.suffix || '';
+                    const duration = 2000;
+                    let startTime = null;
+
+                    const animate = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min((timestamp - startTime) / duration, 1);
+                        const currentCount = Math.floor(progress * countTo);
+                        target.textContent = currentCount + suffix;
+
+                        if (progress < 1) {
+                            window.requestAnimationFrame(animate);
+                        } else {
+                            target.textContent = countTo + suffix;
+                        }
+                    };
+
+                    window.requestAnimationFrame(animate);
+                    countObserver.unobserve(target);
+                }
+            });
+        },
+        { threshold: 0.5 },
+    );
+
+    document
+        .querySelectorAll('[data-count]')
+        .forEach((el) => countObserver.observe(el));
 });

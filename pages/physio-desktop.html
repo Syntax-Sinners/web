@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PhysioEZ Platform | Syntax Sinners</title>
+    <title>PhysioEZ Platform | Sumit Srivastava</title>
     <meta
       name="description"
       content="PhysioEZ platform overview: product vision, role-based workflows, and live demo access."
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -24,7 +24,7 @@
 
     <nav class="navbar">
       <a href="../index.html" class="logo">
-        <span>&lt;/&gt;</span> Syntax Sinners
+        <span>&lt;/&gt;</span> Sumit Srivastava
       </a>
       <div class="nav-links">
         <a href="#hero">Overview</a>
@@ -32,6 +32,10 @@
         <a href="#why">Vision</a>
       </div>
       <div class="flex items-center gap-4 nav-actions">
+        <div class="view-toggle-pill" id="viewToggle">
+          <button class="active" data-view="product">Product</button>
+          <button data-view="dev">DevMode</button>
+        </div>
         <div class="nav-status" title="PhysioEZ platform live">
           <span class="dot"></span>
           Platform Live
@@ -45,14 +49,15 @@
       </div>
     </nav>
 
-    <main>
-      <section id="hero" class="hero-shell container">
+    <main id="mainContent" data-view-mode="product">
+      <section id="hero" class="hero-shell container view-product">
         <div class="hero-copy" data-reveal="up">
           <span class="hero-kicker">PHYSIOEZ PLATFORM</span>
           <h1>Built for modern clinic operations.</h1>
           <p>
             A modular clinic platform for daily workflows, clear operations, and
-            reliable scale by <span class="brand-accent">Syntax Sinners</span>.
+            reliable scale engineered by
+            <span class="brand-accent">Sumit Srivastava</span>.
           </p>
 
           <div class="hero-actions">
@@ -82,7 +87,54 @@
         </div>
       </section>
 
-      <section class="proof-ribbon container" data-reveal="up">
+      <section id="devHero" class="hero-shell container view-dev">
+        <div class="hero-copy" data-reveal="up">
+          <span class="hero-kicker">ARCHITECTURAL MANIFESTO</span>
+          <h1>PhysioEZ <span class="brand-accent">Core Engine</span>.</h1>
+          <p>
+            The culmination  of intensive system design. A modular, role-isolated Clinic Management OS built on a triple-tier architecture: Native Rust, Node.js Logic, and React 19 UI.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#blueprint" class="btn btn-primary">Analyze System Design</a>
+            <a href="https://github.com/Syntax-Sinners" class="btn btn-secondary" target="_blank">Technical Docs</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal="up" data-reveal-delay="0.2s">
+          <div class="tech-stack-map">
+            <div class="stack-category">
+              <h5>INTERFACE</h5>
+              <ul>
+                <li>React 19 (Strict Mode)</li>
+                <li>Vite 6 Bundler</li>
+                <li>TailwindCSS v4 Core</li>
+                <li>Zustand State Mesh</li>
+              </ul>
+            </div>
+            <div class="stack-category">
+              <h5>NATIVE RUNTIME</h5>
+              <ul>
+                <li>Node.js (Embedded)</li>
+                <li>Tauri v2 (Rust Core)</li>
+                <li>Express API Layer</li>
+                <li>OS-Level Hooks</li>
+              </ul>
+            </div>
+            <div class="stack-category">
+              <h5>PERSISTENCE</h5>
+              <ul>
+                <li>Local SQLite 3</li>
+                <li>Central MySQL 8.0</li>
+                <li>WS Proxy Engine</li>
+                <li>Segmented Media</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-ribbon container view-product" data-reveal="up">
         <p class="proof-ribbon-title">
           BUILT FOR PHYSIOTHERAPY AND REHABILITATION CLINICS
         </p>
@@ -95,32 +147,505 @@
         </div>
       </section>
 
-      <section class="proof-stats container" data-reveal="up">
-        <p class="proof-stats-kicker">
-          Trusted by healthcare teams running active operations
-        </p>
-        <h2>Trusted by Healthcare Professionals</h2>
+      <section class="proof-stats container view-product" data-reveal="up">
+        <p class="proof-stats-kicker">OPERATIONAL EXCELLENCE</p>
+        <h2>Powering High-Volume Clinical Care</h2>
         <p>
-          Clinics use PhysioEZ to streamline reception, treatment tracking,
-          billing, and reporting in one connected system.
+          PhysioEZ is engineered to handle the complexity of active medical
+          practices, from deep patient history to real-time financial
+          reconciliation.
         </p>
         <div class="proof-stats-grid">
           <article>
-            <strong>2</strong>
-            <span>Clinic Live</span>
+            <strong data-count="2">0</strong>
+            <span>Active Facilities</span>
           </article>
           <article>
-            <strong>500+</strong>
-            <span>Patients Managed</span>
+            <strong data-count="500" data-suffix="+">0+</strong>
+            <span>Records Synchronized</span>
           </article>
           <article>
-            <strong>100%</strong>
-            <span>Platform Uptime</span>
+            <strong data-count="100" data-suffix="%">0%</strong>
+            <span>System Reliability</span>
           </article>
         </div>
       </section>
 
-      <section id="roles" class="role-shell container section-padding">
+      <section
+        id="blueprint"
+        class="architecture-shell container section-padding view-dev"
+      >
+        <div class="section-header" data-reveal="up">
+          <span class="section-tag">THE SYSTEM FLOW</span>
+          <h2 class="section-title">Operational Architecture.</h2>
+          <p class="section-desc">
+            PhysioEZ operates via a multi-tier synchronization loop, ensuring
+            clinic data is stored locally within 400ms and reflected in the
+            cloud bridge in sub-second cycles.
+          </p>
+        </div>
+
+        <div class="desktop-architecture-blueprint" data-reveal="up">
+          <div class="tauri-wrapper-frame">
+            <div class="tauri-nodes-grid">
+              
+              <!-- Flow Lines & Packets -->
+              <div class="flow-lines-layer">
+                <!-- Mongo -> React -->
+                <div class="arch-line arch-line-v l-mongo-react">
+                  <div class="packet pack-up"></div>
+                </div>
+                
+                <!-- React <-> Node -->
+                <div class="arch-line arch-line-h l-react-node-fwd">
+                  <div class="packet pack-right"></div>
+                </div>
+                <div class="arch-line arch-line-h l-react-node-rev">
+                  <div class="packet pack-left"></div>
+                </div>
+
+                <!-- Node <-> SQLite -->
+                <div class="arch-line arch-line-v l-node-sqlite-fwd">
+                  <div class="packet pack-down"></div>
+                </div>
+                <div class="arch-line arch-line-v l-node-sqlite-rev">
+                  <div class="packet pack-up"></div>
+                </div>
+
+                <!-- Node <-> Sync -->
+                <div class="arch-line arch-line-h l-node-sync-fwd">
+                  <div class="packet pack-right"></div>
+                </div>
+                <div class="arch-line arch-line-h l-node-sync-rev">
+                  <div class="packet pack-left"></div>
+                </div>
+              </div>
+
+              <!-- Row 1 -->
+              <div class="interior-box node-react">
+                <h5>REACT 19 (STRICT MODE)</h5>
+                <ul>
+                  <li>Vite 6 / Custom CSS v4 / Zustand</li>
+                </ul>
+                <div class="box-highlight">
+                  Provides zero-latency UI responses<br>
+                  through optimistic rendering matrices.<br><br>
+                  Immediately writes and reflects interactions<br>
+                  to local data stores before awaiting<br>
+                  remote resolutions.
+                </div>
+              </div>
+              
+              <div class="interior-box node-nodejs">
+                <h5>INTERNAL NODE.JS CORE</h5>
+                <p>
+                  An embedded calculation engine<br>
+                  functioning entirely offline.<br><br>
+                  It isolates heavy business computations<br>
+                  and data aggregation from the UI thread.
+                </p>
+                <div class="box-highlight">
+                  Handles JSON Serialization<br>
+                  & Local Calculation APIs
+                </div>
+              </div>
+              
+              <div class="node-sync node-sync-wrapper">
+                <div class="sync-engine-title">SYNC ENGINE LOOP</div>
+                <div class="sync-steps-container">
+                  <div class="sync-card">
+                    <h6>1. Conflict Queue</h6>
+                    <p>Detects local drift, logging mutation diffs, and auto-increments distributed keys.</p>
+                  </div>
+                  <div class="sync-card">
+                    <h6>2. Payload Push</h6>
+                    <p>Transmits localized changes as serialized JSON payloads to the gateway API.</p>
+                  </div>
+                  <div class="sync-card">
+                    <h6>3. Cloud Pull</h6>
+                    <p>Reads global state shifts from colleagues using delta-based timestamp filters.</p>
+                  </div>
+                  <div class="sync-card">
+                    <h6>4. Consolidate</h6>
+                    <p>Merges structural changes from the cloud safely back into the local SQLite node.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="interior-box node-mongo">
+                <h5>LOCAL MONGODB (NO-SQL)</h5>
+                <p>
+                  Maintains dynamic system configurations,<br>
+                  cached rulesets, and isolated user-preference<br>
+                  JSON structures.<br><br>
+                  Resolves immediately on app boot.
+                </p>
+                <div class="box-highlight">
+                  System Settings &<br>
+                  Schema Flexibility
+                </div>
+              </div>
+
+              <div class="interior-box node-sqlite">
+                <h5>LOCAL SQLITE (RELATIONAL)</h5>
+                <p>
+                  High-performance disk persistence for<br>
+                  core clinical entities.<br><br>
+                  Structured mapped tables enable complex,<br>
+                  immediate local SQL queries.
+                </p>
+                <div class="box-highlight">
+                  Zero-latency Client-Side<br>
+                  Persistence
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="bridge-architecture-container" data-reveal="up" style="position: relative; padding: 40px 0; display: flex; justify-content: center; z-index: 0;">
+          <div class="bridge-flow-layer" style="position: absolute; inset: 0; pointer-events: none; z-index: 0;">
+            <!-- Straight parallel lines to Desktop (NodeJS Core) -->
+            <div class="arch-line arch-line-v b-line b-app-fwd" style="left: calc(50% - 15px); bottom: 50%; top: -122px;"><div class="packet pack-down"></div></div>
+            <div class="arch-line arch-line-v b-line b-app-rev" style="left: calc(50% + 15px); bottom: 50%; top: -122px;"><div class="packet pack-up"></div></div>
+            
+            <!-- Straight parallel lines to Server (API's NodeJS Core) -->
+            <div class="arch-line arch-line-v b-line b-srv-fwd" style="left: calc(50% - 15px); top: 50%; bottom: -62px;"><div class="packet pack-down"></div></div>
+            <div class="arch-line arch-line-v b-line b-srv-rev" style="left: calc(50% + 15px); top: 50%; bottom: -62px;"><div class="packet pack-up"></div></div>
+          </div>
+          <div class="interior-box bridge-rectangle" style="width: 320px; text-align: center; border-color: var(--primary); z-index: 2; background: var(--bg-surface-2);">
+            <h5 style="margin-bottom: 20px;">GLOBAL SYNC GATEWAY</h5>
+            <ul style="margin-bottom: 20px;">
+              <li>Real-time WebSockets</li>
+            </ul>
+            <div class="box-highlight">
+              Multiple Clients Sync<br>through Server Shared Database
+            </div>
+          </div>
+        </div>
+
+        <div class="server-architecture-blueprint" data-reveal="up">
+          <div class="server-frame-outline">
+            <div class="server-nodes-grid">
+              
+              <div class="server-flow-layer">
+                <!-- Mongo <-> User Settings -->
+                <div class="arch-line arch-line-v l-smongo-set-1"><div class="packet pack-down"></div></div>
+                <div class="arch-line arch-line-v l-smongo-set-2"><div class="packet pack-up"></div></div>
+                
+                <!-- Mongo <-> API -->
+                <div class="arch-line arch-line-h l-smongo-api-1"><div class="packet pack-right"></div></div>
+                <div class="arch-line arch-line-h l-smongo-api-2"><div class="packet pack-left"></div></div>
+                
+                <!-- API <-> Payload -->
+                <div class="arch-line arch-line-h l-sapi-pay-1"><div class="packet pack-right"></div></div>
+                <div class="arch-line arch-line-h l-sapi-pay-2"><div class="packet pack-left"></div></div>
+                
+                <!-- API <-> MySQL -->
+                <div class="arch-line arch-line-v l-sapi-mysql-1"><div class="packet pack-down"></div></div>
+                <div class="arch-line arch-line-v l-sapi-mysql-2"><div class="packet pack-up"></div></div>
+              </div>
+
+              <!-- Nodes formatted identically to desktop cards -->
+              <div class="interior-box s-node-mongo">
+                <h5>MONGODB (NO-SQL)</h5>
+                <ul>
+                  <li>Config / Metadata</li>
+                </ul>
+                <div class="box-highlight">System Settings &<br>Schema configurations</div>
+              </div>
+
+              <div class="interior-box s-node-settings">
+                <h5>USER SETTINGS</h5>
+                <ul>
+                  <li>Client configuration parameters</li>
+                </ul>
+                <div class="box-highlight">Dynamic runtime<br>controls</div>
+              </div>
+
+              <div class="interior-box s-node-api">
+                <h5>API'S (NODEJS CORE)</h5>
+                <ul>
+                  <li>Read, Write, Batch, Sync</li>
+                  <li>API Gateway & CRUD Routines</li>
+                </ul>
+                <div class="box-highlight">100 req hit / min threshold</div>
+              </div>
+
+              <div class="interior-box s-node-payload">
+                <h5>SYNC PAYLOAD</h5>
+                <ul>
+                  <li>Standard JSON Schema</li>
+                </ul>
+                <div class="box-highlight" style="white-space: pre-wrap; font-family: monospace; font-size: 0.75rem; text-align: left; margin-top: 5px;">{
+  table: [patient],
+  field: patient_id,
+  operation: read/write
+}</div>
+              </div>
+
+              <div class="interior-box s-node-mysql">
+                <h5>MYSQL (RELATIONAL)</h5>
+                <ul>
+                  <li>Core Transactional Data</li>
+                </ul>
+                <div class="box-highlight">High-concurrency<br>clinical traffic</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Expanded Anatomy Section -->
+        <div class="anatomy-section" data-reveal="up">
+          <div class="anatomy-header">
+            <h3>Project Anatomy (V3.0)</h3>
+            <span class="path-badge">/srv/http/admin/desktop/</span>
+          </div>
+          <p class="anatomy-intro">The system is governed by a strict modular rule: <strong>Role Isolation</strong>. Each module operates as an independent silo, communicating only through the encrypted common core to prevent cross-contamination.</p>
+          
+          <div class="anatomy-browser">
+            <div class="anatomy-sidebar">
+              <!-- File Tree -->
+              <ul class="file-tree">
+                <li class="tree-folder tree-expanded" data-target="frontend">
+                  <span class="folder-label"><i class="ph ph-folder-open"></i> frontend/</span>
+                  <ul class="tree-nested" style="display: block;">
+                    <li class="tree-folder tree-expanded" data-target="admin">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder-open"></i> admin/</span>
+                      <ul class="tree-nested" style="display: block;">
+                        <li class="tree-file active" data-target="admin-dashboard" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Dashboard.tsx</li>
+                        <li class="tree-file" data-target="admin-simulator" style="padding-left: 76px;"><i class="ph ph-file-code"></i> RegistrationSimulator.tsx</li>
+                        <li class="tree-file" data-target="admin-services" style="padding-left: 76px;"><i class="ph ph-file-code"></i> ServiceManager.tsx</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="reception">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> reception/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="rec-dash" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Dashboard.tsx</li>
+                        <li class="tree-file" data-target="rec-reg" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Registration.tsx</li>
+                        <li class="tree-file" data-target="rec-inq" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Inquiry.tsx</li>
+                        <li class="tree-file" data-target="rec-sched" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Schedule.tsx</li>
+                        <li class="tree-file" data-target="rec-more" style="padding-left: 76px;"><i class="ph ph-dots-three"></i> 14 more hidden files...</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="components">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> components/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="comp-protect" style="padding-left: 76px;"><i class="ph ph-file-code"></i> ProtectedRoute.tsx</li>
+                        <li class="tree-file" data-target="comp-splash" style="padding-left: 76px;"><i class="ph ph-file-code"></i> SplashScreen.tsx</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="store">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> store/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="store-theme" style="padding-left: 76px;"><i class="ph ph-file-code"></i> useThemeStore.ts</li>
+                      </ul>
+                    </li>
+                    <li class="tree-file" data-target="app-tsx" style="padding-left: 50px;"><i class="ph ph-file-code"></i> App.tsx</li>
+                    <li class="tree-file" data-target="main-tsx" style="padding-left: 50px;"><i class="ph ph-file-code"></i> main.tsx</li>
+                  </ul>
+                </li>
+                <li class="tree-folder" data-target="server">
+                  <span class="folder-label"><i class="ph ph-folder"></i> server/</span>
+                  <ul class="tree-nested">
+                    <li class="tree-folder" data-target="api">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> api/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-folder" data-target="api-admin">
+                          <span class="folder-label" style="padding-left: 70px;"><i class="ph ph-folder"></i> admin/</span>
+                          <ul class="tree-nested">
+                            <li class="tree-file" data-target="api-admin-router" style="padding-left: 96px;"><i class="ph ph-file-code"></i> router.js</li>
+                          </ul>
+                        </li>
+                        <li class="tree-folder" data-target="api-reception">
+                          <span class="folder-label" style="padding-left: 70px;"><i class="ph ph-folder"></i> reception/</span>
+                          <ul class="tree-nested">
+                            <li class="tree-file" data-target="api-rec-router" style="padding-left: 96px;"><i class="ph ph-file-code"></i> router.js</li>
+                            <li class="tree-file" data-target="api-rec-sync" style="padding-left: 96px;"><i class="ph ph-file-code"></i> sync.js</li>
+                            <li class="tree-file" data-target="api-rec-bill" style="padding-left: 96px;"><i class="ph ph-file-code"></i> billing.js</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="config">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> config/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="conf-db" style="padding-left: 76px;"><i class="ph ph-file-code"></i> db.js</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="middleware">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> middleware/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="mid-auth" style="padding-left: 76px;"><i class="ph ph-file-code"></i> auth.js</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="scripts">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> scripts/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="scripts-sync" style="padding-left: 76px;"><i class="ph ph-file-code"></i> syncEngine.js</li>
+                      </ul>
+                    </li>
+                    <li class="tree-file" data-target="server-js" style="padding-left: 50px;"><i class="ph ph-file-code"></i> server.js</li>
+                  </ul>
+                </li>
+                <li class="tree-folder" data-target="src-tauri">
+                  <span class="folder-label"><i class="ph ph-folder"></i> src-tauri/</span>
+                  <ul class="tree-nested">
+                    <li class="tree-folder" data-target="tauri-src">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> src/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="tauri-main" style="padding-left: 76px;"><i class="ph ph-file-code"></i> main.rs</li>
+                      </ul>
+                    </li>
+                    <li class="tree-folder" data-target="capabilities">
+                      <span class="folder-label" style="padding-left: 50px;"><i class="ph ph-folder"></i> capabilities/</span>
+                      <ul class="tree-nested">
+                        <li class="tree-file" data-target="cap-strict" style="padding-left: 76px;"><i class="ph ph-file-code"></i> strict-database.json</li>
+                      </ul>
+                    </li>
+                    <li class="tree-file" data-target="tauri-conf" style="padding-left: 50px;"><i class="ph ph-file-code"></i> tauri.conf.json</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="anatomy-viewer">
+              <div class="anatomy-viewer-header">
+                <span id="viewer-path" class="viewer-path">/modules/admin</span>
+              </div>
+              <div class="anatomy-viewer-content" id="viewer-content">
+                <!-- Content gets injected here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW: Data Integrity & Audit Logic -->
+        <div class="data-integrity-section" data-reveal="up">
+          <div class="integrity-header">
+            <span class="integrity-icon">⛓️</span>
+            <div>
+              <h3>Security & Audit-Grade Logging</h3>
+              <p>Every single mutation in PhysioEZ is logged as a JSON-structured event for full transparency.</p>
+            </div>
+          </div>
+          <div class="integrity-grid">
+            <div class="integrity-card">
+              <h5>Client-Side Encryption</h5>
+              <p>Sensitive patient data is encrypted locally before ever leaving the worker threads, ensuring true privacy at rest.</p>
+            </div>
+            <div class="integrity-card">
+              <h5>JSON Event Streaming</h5>
+              <p>Logs capture Employee ID, IP/Device Info, and Full Target Payloads to reconstruct the state at any point in time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role Ecosystem Deep-Dive -->
+        <div class="modules-deep-dive" data-reveal="up">
+          <div class="module-column">
+            <div class="module-header">
+              <span class="module-icon">🏥</span>
+              <h4>Reception Ecosystem</h4>
+            </div>
+            <p>The high-frequency operational pulse. Handles patient lifecycle and financial entry.</p>
+            <ul class="module-features">
+              <li><strong>Patient Lifecycle:</strong> Full document reconciliation and registration hooks.</li>
+              <li><strong>Scheduler Core:</strong> High-performance calendar with clash-detection and native-notification alerts.</li>
+              <li><strong>Financial Entry:</strong> Invoicing, receipt generation, and local print-bridge integration.</li>
+            </ul>
+          </div>
+
+          <div class="module-column">
+            <div class="module-header">
+              <span class="module-icon">🩺</span>
+              <h4>Clinical Suite (Doctor)</h4>
+            </div>
+            <p>Specialized interfaces for Doctors and Junior Therapists to manage medical history.</p>
+            <ul class="module-features">
+              <li><strong>Medical Timeline:</strong> Encrypted patient history view with real-time state updates.</li>
+              <li><strong>Treatment Logs:</strong> Role-specific clinical notes and session tracking modules.</li>
+              <li><strong>Junior Hub:</strong> Delegated tasks for test assistants and junior house staff.</li>
+            </ul>
+          </div>
+
+          <div class="module-column">
+            <div class="module-header">
+              <span class="module-icon">🏢</span>
+              <h4>Admin Oversight</h4>
+            </div>
+            <p>The control center for multi-branch clinic management and system config.</p>
+            <ul class="module-features">
+              <li><strong>RBAC Engine:</strong> Granular control over module access and system-wide visibility.</li>
+              <li><strong>Revenue Analytics:</strong> Live heatmaps of clinic performance, footfall, and conversion.</li>
+              <li><strong>Branch Manager:</strong> Multi-tenant tools to monitor operational efficiency across locations.</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+
+        <!-- Security Baseline -->
+        <div class="security-baseline" data-reveal="up">
+          <div class="security-lock">🔒</div>
+          <div class="security-content">
+            <h4>Security & Integrity Baseline</h4>
+            <div class="security-tags">
+              <span>Bearer Token Auth</span>
+              <span>AES-256 At Rest</span>
+              <span>Rate Limiting</span>
+              <span>Module Isolation</span>
+            </div>
+            <p>
+              Patient data privacy is enforced through strict isolation between
+              the Admin and Reception domains. All API endpoints require a
+              stateless JWT validated via central middleware, with global
+              rate-limiting preventing brute-force or service abuse.
+            </p>
+          </div>
+        </div>
+
+        <div class="architecture-breakdown-grid" data-reveal="up">
+          <div class="arch-card">
+            <div class="arch-num">01</div>
+            <h4>Module Isolation</h4>
+            <p>
+              Separation of concerns ensures that front-desk staff cannot
+              escalate privileges into financial or branch management systems.
+            </p>
+          </div>
+          <div class="arch-card">
+            <div class="arch-num">02</div>
+            <h4>Persistence Layer</h4>
+            <p>
+              Hybrid persistence combines the speed of local SQLite for UI
+              reactivity with the central durability of a MySQL cluster.
+            </p>
+          </div>
+          <div class="arch-card">
+            <div class="arch-num">03</div>
+            <h4>Traffic Mitigation</h4>
+            <p>
+              Morgan logging and Helmet security headers ensure every packet is
+              verified and logged for audit compliance.
+            </p>
+          </div>
+          <div class="arch-card">
+            <div class="arch-num">04</div>
+            <h4>Distributed Sync</h4>
+            <p>
+              The WS-style sync engine resolves state conflicts automatically
+              during sub-second payload reconciliation cycles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="roles"
+        class="role-shell container section-padding view-product"
+      >
         <div class="section-header" data-reveal="up">
           <span class="section-tag">ROLE SYSTEM</span>
           <h2 class="section-title">
@@ -409,55 +934,70 @@
         </div>
       </section>
 
-      <section id="why" class="why-shell container section-padding">
-        <div class="section-header" data-reveal="up">
-          <span class="section-tag">VISION AND MOTIVATION</span>
-          <h2 class="section-title">Why PhysioEZ Exists</h2>
-          <p class="section-desc">
-            <span style="font-weight: 700; color: var(--primary);">PhysioEZ</span> was built to solve the operational chaos inside growing
-            clinics. One platform that connects patients, doctors, staff, and
-            clinic operations.
-          </p>
-        </div>
+      <section id="why" class="vision-shell container section-padding">
+        <div class="vision-content">
+          <div class="vision-main-header" data-reveal="up">
+            <span class="section-tag">VISION AND MOTIVATION</span>
+            <h2 class="vision-title">
+              A unified engine <br />for clinical excellence.
+            </h2>
+          </div>
 
-        <div class="vision-quote" data-reveal="up" data-reveal-delay="0.05s">
-          <p style="text-align: center;">
-            Clinics should not run on spreadsheets, notebooks, and disconnected
-            tools. <br />
-           <span style="font-weight: 700; color: var(--primary);">PhysioEZ</span> brings the entire clinic workflow into one unified system.
-          </p>
-        </div>
+          <div class="vision-grid">
+            <div class="vision-intro" data-reveal="up">
+              <p>
+                Healthcare clinics should not operate on fragmented systems,
+                manual spreadsheets, or disconnected legacy tools. I built
+                <strong>PhysioEZ</strong> to serve as the singular source of
+                truth for modern practices.
+              </p>
+              <p>
+                The goal was simple: bridge the gap between clinical data and
+                operational velocity, ensuring that doctors and staff can focus
+                entirely on patient recovery.
+              </p>
+            </div>
 
-        <div class="insight-strip">
-          <article class="insight-pill" data-reveal="up">
-            <h3>Vision</h3>
-            <p>One connected operating layer for complete clinic workflows.</p>
-          </article>
-
-          <article
-            class="insight-pill"
-            data-reveal="up"
-            data-reveal-delay="0.1s"
-          >
-            <h3>Motivation</h3>
-            <p>
-              Replace fragmented systems with one shared, reliable platform.
-            </p>
-          </article>
-
-          <article
-            class="insight-pill"
-            data-reveal="up"
-            data-reveal-delay="0.2s"
-          >
-            <h3>Platform Direction</h3>
-            <p>A modular system designed to support 12+ clinic operations.</p>
-          </article>
+            <div class="vision-pillars">
+              <div class="pillar-item" data-reveal="up">
+                <span class="pillar-num">01</span>
+                <h3>The Core Vision</h3>
+                <p>
+                  Establishing one connected operating layer that unifies
+                  patient intake, treatment tracking, and financial monitoring.
+                </p>
+              </div>
+              <div
+                class="pillar-item"
+                data-reveal="up"
+                data-reveal-delay="0.1s"
+              >
+                <span class="pillar-num">02</span>
+                <h3>The Motivation</h3>
+                <p>
+                  Eliminating the technical debt of fragmented tools with a
+                  shared, reliable platform that scales with branch growth.
+                </p>
+              </div>
+              <div
+                class="pillar-item"
+                data-reveal="up"
+                data-reveal-delay="0.2s"
+              >
+                <span class="pillar-num">03</span>
+                <h3>Platform Direction</h3>
+                <p>
+                  Built on a modular kernel capable of supporting 12+ unique
+                  clinical operations within a secure environment.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-shell">
         <div class="footer-hero">
@@ -483,12 +1023,12 @@
         <div class="footer-main">
           <div class="footer-brand">
             <a href="#" class="logo footer-logo">
-              <span>&lt;/&gt;</span> Syntax Sinners
+              <span>&lt;/&gt;</span> Sumit Srivastava
             </a>
             <p>
-              An elite engineering collective dedicated to building
-              high-performance SaaS, robust cloud backends, and mission-critical
-              internal tools.
+              Software Architect & Engineer specializing in high-performance
+              SaaS, robust cloud backends, and mission-critical internal tools.
+              Founder of Syntax Sinners.
             </p>
             <div class="footer-status-pill">
               <span class="status-dot-green"></span>
@@ -538,16 +1078,21 @@
                   />
                 </svg>
               </a>
-              <!-- <a href="#" aria-label="X">
-                <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" /></svg>
-              </a> -->
+              <a
+                href="#"
+                class="nav-extra"
+                style="font-size: 0.8rem; opacity: 0.7; min-width: 100px"
+                >Syntax Sinners</a
+              >
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
           <div class="footer-legal">
-            <span>&copy; 2026 Syntax Sinners. All rights reserved.</span>
+            <span
+              >&copy; 2026 Sumit Srivastava. Founder of Syntax Sinners.</span
+            >
           </div>
           <div class="footer-links">
             <a href="privacy.html">Privacy</a>
@@ -671,7 +1216,487 @@
           });
         });
 
+        const viewToggle = document.getElementById("viewToggle");
+        const mainContent = document.getElementById("mainContent");
+
+        if (viewToggle && mainContent) {
+          const toggleButtons = viewToggle.querySelectorAll("[data-view]");
+          toggleButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const mode = btn.dataset.view;
+              mainContent.dataset.viewMode = mode;
+
+              // Toggle active button class
+              toggleButtons.forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              // Re-trigger scroll reveal for the new mode's content
+              document
+                .querySelectorAll(`[data-view-mode="${mode}"] [data-reveal]`)
+                .forEach((el) => {
+                  el.classList.remove("revealed");
+                  setTimeout(() => {
+                    el.classList.add("revealed");
+                  }, 10);
+                });
+            });
+          });
+        }
+
         setRoleMode("clinic");
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const anatomyData = {
+          "frontend": {
+            path: "/frontend/",
+            title: "React UI Layer",
+            desc: "The clinic-facing visual interface built on React 19 + Vite.<br><ul><li><strong>What it does:</strong> Renders completely offline routing between distinct physical user roles such as Administration and Reception.</li><li><strong>Architecture:</strong> Employs strict module boundaries preventing cross-contamination of logic files globally.</li><li><strong>How it works:</strong> Configured natively through Vite builder to distribute an optimized binary straight into the Tauri `dist` folder upon building.</li></ul>",
+            code: `├─ src/\n│  ├─ admin/\n│  ├─ reception/\n│  ├─ components/\n│  ├─ store/\n│  └─ App.tsx`
+          },
+          "admin": {
+            path: "/frontend/src/admin/",
+            title: "Admin System Workflow",
+            desc: "Zero-trust workspace locked securely to Hospital Directors.<br><ul><li><strong>What it does:</strong> Allows physical modifications of the local system configuration including Service adjustments and global analytics tracking.</li><li><strong>Data shown:</strong> Deep KPI reports and real-time revenue matrices.</li><li><strong>How it works:</strong> Wrapped inside high-level Authorization components dictating access via cryptographic JWT checks before mounting dynamically.</li></ul>",
+            code: `export default function AdminModule() {\n  return (\n    <div className="admin-container">\n      <Outlet />\n    </div>\n  );\n}`
+          },
+          "admin-dashboard": {
+            path: "/frontend/src/admin/Dashboard.tsx",
+            title: "Clinic Analytics Hub",
+            desc: "Advanced data visualization hub built for directors.<br><ul><li><strong>What it does:</strong> Translates millions of local SQL rows into beautiful, lag-free analytics dashboards.</li><li><strong>Data shown:</strong> Presents live high-level KPI tiles, daily revenue bar graphs, operations traffic lines, and aggregated financial projections.</li><li><strong>Fetches/Sends:</strong> Polls `/api/admin/dashboard` utilizing isolated administrative Express paths.</li></ul>",
+            code: `import { AnalyticsProvider } from "./context";\nimport StatsGrid from "./StatsGrid";\n\nexport default function AdminDashboard() {\n  return <AnalyticsProvider><StatsGrid /></AnalyticsProvider>;\n}`
+          },
+          "admin-simulator": {
+            path: "/frontend/src/admin/RegistrationSimulator.tsx",
+            title: "Load Stress Testing",
+            desc: "Offline benchmarking tool for verifying database resilience.<br><ul><li><strong>What it does:</strong> Injects thousands of fake patient registrations concurrently to ensure the SQLite Write-Ahead Logging is functioning.</li><li><strong>Data shown:</strong> Read/Write Latency scores, total packet losses, and UI fragmentation timings natively.</li><li><strong>Fetches/Sends:</strong> Blasts massive payloads identically mapped to the system's `/reception/simulate` endpoint.</li></ul>",
+            code: `const simulateInject = async () => {\n  const payload = generateFakePatient();\n  await api.post('/reception/simulate', payload);\n};`
+          },
+          "admin-services": {
+            path: "/frontend/src/admin/ServiceManager.tsx",
+            title: "Pricing Matrices",
+            desc: "Core clinical treatment definition ruleset engine.<br><ul><li><strong>What it does:</strong> Allows admin to define varying levels of billing modifiers (Card tax vs Cash tax) seamlessly modifying global pricing formulas.</li><li><strong>Data shown:</strong> Editable arrays of distinct medical tests, varying consultations logic, and variable equipment rentals.</li><li><strong>Fetches/Sends:</strong> Modifies raw structural tables universally using `/api/admin/services/update` affecting all future reception desk processes.</li></ul>",
+            code: `export default function ServiceManager() {\n  const [services, setServices] = useState<Service[]>([]);\n  // ...\n}`
+          },
+          "reception": {
+            path: "/frontend/src/reception/",
+            title: "Operational Workflows",
+            desc: "Designed for high-speed reception desk performance handling patient queues, payment reconciliation, queries, and test submissions.",
+            code: `├─ Dashboard.tsx\n├─ Registration.tsx\n├─ Inquiry.tsx\n├─ Schedule.tsx\n├─ TestSchedule.tsx\n├─ Tests.tsx\n├─ Patients.tsx\n├─ Billing.tsx\n├─ Attendance.tsx\n├─ Expenses.tsx\n├─ Feedback.tsx\n├─ Reports.tsx\n├─ Cancelled.tsx\n└─ ...`
+          },
+          "rec-dash": {
+            path: "/frontend/src/reception/Dashboard.tsx",
+            title: "Live Operations Overview",
+            map: ["Reception Module", "Queue Tracker UI", "Socket Listeners"],
+            desc: "Command center for front-desk staff aggregating real-time operations.<br><ul><li><strong>What it does:</strong> Displays overarching metrics for incoming patient queues and unbilled invoices.</li><li><strong>Data shown:</strong> Live queue counts, recent inquiry conversions, pending diagnostics, and quick-action toolbars.</li><li><strong>Fetches/Sends:</strong> Polls `/api/reception/metrics` automatically via WebSocket to refresh charts without manual reloads.</li></ul>",
+            code: `export default function ReceptionDashboard() {\n  return <LiveQueueTracker autoPoll={3000} />;\n}`
+          },
+          "rec-reg": {
+            path: "/frontend/src/reception/Registration.tsx",
+            title: "High-Speed Intake Form",
+            map: ["Reception Module", "Form Validation", "Atomic Offline Transaction"],
+            desc: "Critical component for registering new Walk-in patients smoothly.<br><ul><li><strong>What it does:</strong> Facilitates ultra-fast demographic entry, KYC recording, and medical profile creation.</li><li><strong>How it works:</strong> Utilizes React Hook Form for zero-lag keystrokes and instantly calculates split payment divisions (Cash vs UPI).</li><li><strong>Fetches/Sends:</strong> Sends massive structured payloads to `/api/reception/register` containing patient metadata and transaction specifics.</li></ul>",
+            code: `const onSubmit = data => {\n  api.post('/reception/register', { ...data, paymentSplit });\n};`
+          },
+          "rec-inq": {
+            path: "/frontend/src/reception/Inquiry.tsx",
+            title: "Walk-in & Call Inquiries",
+            map: ["Reception Module", "Lead Array Map", "Conversion Trigger"],
+            desc: "Mini-CRM pipeline tracking non-patient visitors and prospective clinical leads.<br><ul><li><strong>What it does:</strong> Logs visitor questions, follow-up dates, and associated departments securely.</li><li><strong>Data shown:</strong> Tabular view of all active leads filtered by 'Hot', 'Warm', or 'Cold' priority metrics.</li><li><strong>Fetches/Sends:</strong> Fetches `/api/reception/inquiries` and sends conversion triggers if a user registers as a patient.</li></ul>",
+            code: `export function InquiryPanel() {\n  const convertToPatient = (lead) => router.push(lead.data);\n}`
+          },
+          "rec-sched": {
+            path: "/frontend/src/reception/Schedule.tsx",
+            title: "Physician Appointments",
+            map: ["Reception Module", "Doctor Grid Mapping", "WebSocket Collision Check"],
+            desc: "Dynamic calendar interface managing doctor availability matrices.<br><ul><li><strong>What it does:</strong> Allows reception to slot patient timings without causing overlap conflicts between specialists.</li><li><strong>Data shown:</strong> Grid-based timeline mapped uniquely to the Clinic's operating hours and specific physician shifts.</li><li><strong>How it works:</strong> Updates block availability instantly via WebSockets to prevent double-booking across multiple receptionist machines.</li></ul>",
+            code: `<DoctorScheduler\n  onSlotSelect={bookAppointment}\n  liveSync={true}\n/>`
+          },
+          "rec-test-sched": {
+            path: "/frontend/src/reception/TestSchedule.tsx",
+            title: "Test Allocation Engine",
+            map: ["Reception Module", "Resource Tree", "Hardware Lock System"],
+            desc: "Focused scheduling view solely for intensive medical procedures.<br><ul><li><strong>What it does:</strong> Allocates large medical machinery (X-Ray, MRI) efficiently via time-boxing.</li><li><strong>Data shown:</strong> Resource trees highlighting which hardware is currently occupied or under maintenance.</li><li><strong>Fetches/Sends:</strong> Pulls hardware statuses from `/api/hardware/status` and sends booking locks on confirmation.</li></ul>",
+            code: `<ResourceMatrix\n  resourceType="test-machine"\n  conflictResolution="prevent"\n/>`
+          },
+          "rec-tests": {
+            path: "/frontend/src/reception/Tests.tsx",
+            title: "Daily Diagnostics Logs",
+            map: ["Reception Module", "Lab Technicians", "Offline Progress Mutator"],
+            desc: "Operational manifest tracking the physical progression of lab procedures.<br><ul><li><strong>What it does:</strong> Marks tests sequentially from 'Pending' -> 'In Progress' -> 'Completed'.</li><li><strong>Data shown:</strong> Comprehensive list of today’s required lab work connected to the assigned lab technician.</li><li><strong>Fetches/Sends:</strong> Sends PUT commands to `/tests/status` to mutate the offline database state, triggering notification pings.</li></ul>",
+            code: `const markTestsCompleted = async (ids) => {\n  await api.put('/tests/status', { ids, state: 'DONE' });\n};`
+          },
+          "rec-pat": {
+            path: "/frontend/src/reception/Patients.tsx",
+            title: "EHR Grid Viewer",
+            map: ["Reception Module", "Local EHR Datatable", "Aggregated Profiles"],
+            desc: "Comprehensive database rendering electronic health records rapidly offline.<br><ul><li><strong>What it does:</strong> Allows deep filtering, sorting, and exporting of past and present patient profiles.</li><li><strong>Data shown:</strong> Patient demographic information, linked contact details, historical registration dates, and calculated lifetime values.</li><li><strong>How it works:</strong> Leverages client-side pagination combined with virtual scrolling to render thousands of local records without UI freezing.</li></ul>",
+            code: `const filterPts = patients.filter(p => p.name.includes(query));`
+          },
+          "rec-bill": {
+            path: "/frontend/src/reception/Billing.tsx",
+            title: "Financial Ledger Engine",
+            map: ["Reception Module", "Due Settlement Engine", "Local Invoice Generation"],
+            desc: "Calculates complex financial operations like partial payments and due dates.<br><ul><li><strong>What it does:</strong> Manages accounts receivable by reconciling unpaid invoices spanning multiple visits.</li><li><strong>Data shown:</strong> Chronological ledger history mapping individual charges to their specific cash/card split transactions.</li><li><strong>Fetches/Sends:</strong> Pulls from `/api/billing/ledger/{id}` and submits heavy final settlement payloads ensuring atomicity.</li></ul>",
+            code: `export function BillingLedger({ patientId }) {\n  const invoiceTree = useBilling(patientId);\n  // Computes remaining dues...\n}`
+          },
+          "rec-att": {
+            path: "/frontend/src/reception/Attendance.tsx",
+            title: "Staff & Clinic Attendance",
+            map: ["Reception Module", "Clinic Roster Grid", "Biometric State API"],
+            desc: "Biometric or manual entry module verifying physical staff presence.<br><ul><li><strong>What it does:</strong> Enters physical clock-in/out times to evaluate resource availability matrices.</li><li><strong>Data shown:</strong> Real-time roster table indicating which doctors and technicians are currently on shift.</li><li><strong>Fetches/Sends:</strong> Sends POST mutation to `/api/attendance/mark` triggering an immediate UI refresh across all network receptionists.</li></ul>",
+            code: `const clockIn = async (employeeId) => {\n  await api.post('/attendance/mark', { id: employeeId });\n};`
+          },
+          "rec-exp": {
+            path: "/frontend/src/reception/Expenses.tsx",
+            title: "Clinic Expenditure",
+            map: ["Reception Module", "Daily Vault Tracker", "Encrypted Tauri Uploader"],
+            desc: "Registers localized spending and operational hardware investments.<br><ul><li><strong>What it does:</strong> Captures cash outflows directly from the reception desk drawer for daily accounting balance.</li><li><strong>Data shown:</strong> Tabular logs of spending categorized by 'Logistics', 'Supplies', or 'Emergency' tags.</li><li><strong>How it works:</strong> Encrypts receipt photo uploads natively via Tauri bindings to circumvent local file system constraints.</li></ul>",
+            code: `const uploadReceipt = async (fileBlob) => {\n  const uploader = new SecureUploader(fileBlob);\n  await uploader.send();\n};`
+          },
+          "rec-feed": {
+            path: "/frontend/src/reception/Feedback.tsx",
+            title: "Patient Feedback Loop",
+            map: ["Reception Module", "NPS Scoring Model", "Admin Alert System"],
+            desc: "Collects post-treatment assessments to track operational metrics.<br><ul><li><strong>What it does:</strong> Gathers Net Promoter Scores (NPS) and specific staff performance reviews anonymously.</li><li><strong>Data shown:</strong> Actionable text reviews flagged instantly if clinical satisfaction drops below core thresholds.</li><li><strong>Fetches/Sends:</strong> Submits `/api/feedback/submit` pushing alerts directly to the director's Admin Dashboard.</li></ul>",
+            code: `export function FeedbackCollector() {\n  return <NPSRatingScale onSubmit={logReview} />;\n}`
+          },
+          "rec-rep": {
+            path: "/frontend/src/reception/Reports.tsx",
+            title: "Exportable Audits",
+            map: ["Reception Module", "Rust PDF Bindings", "Aggregated Data Execution"],
+            desc: "Bridge between the React UI and Rust PDF execution for local generation.<br><ul><li><strong>What it does:</strong> Compiles massive raw SQL outputs into formatted CSVs or beautiful static PDFs strictly offline.</li><li><strong>Data shown:</strong> Filter parameters specifying date-ranges, targeted doctors, or specific financial test categories.</li><li><strong>How it works:</strong> Triggers the Tauri `invoke()` interface bypassing Node completely to use Rust’s multi-threading for generation.</li></ul>",
+            code: `const generatePDF = async (reportType) => {\n  await invoke('generate_native_pdf', { type: reportType });\n};`
+          },
+          "rec-can-reg": {
+            path: "/frontend/src/reception/CancelledRegistrations.tsx",
+            title: "Registration Reversals",
+            map: ["Reception Module", "Admin Audit Viewer", "Immutable Soft-Deletes"],
+            desc: "Crucial administrative log for tracking dropped clinic patients.<br><ul><li><strong>What it does:</strong> Maintains a strictly immutable ledger of all patients who abandoned registration mid-process or demanded deletion.</li><li><strong>Data shown:</strong> Patient identifiers, timestamps of cancellation, and precisely logged reasons for the revocation.</li><li><strong>How it works:</strong> Flags active SQLite records as `is_cancelled = 1` rather than hard deletion to preserve financial audits.</li></ul>",
+            code: `<AuditTable type="cancelled_reg" showReasonColumn={true} />`
+          },
+          "rec-can-test": {
+            path: "/frontend/src/reception/CancelledTests.tsx",
+            title: "Test Revocations",
+            map: ["Reception Module", "Asset Reallocation Engine", "Refund Initiator Protocol"],
+            desc: "Log specifically isolating unfulfilled test appointments.<br><ul><li><strong>What it does:</strong> Identifies patients who paid for tests but dropped out, pushing alerts to reception to initiate immediate refunds.</li><li><strong>Data shown:</strong> Transaction references, refund calculation logic, and physical signature requirements from doctors.</li><li><strong>Fetches/Sends:</strong> Pulls from `/api/tests/cancelled` and calculates remaining ledger balances instantly offline.</li></ul>",
+            code: `const refundCalculations = (testObj) => {\n  return testObj.alreadyPaid ? initiateRefund() : void 0;\n};`
+          },
+          "rec-prof": {
+            path: "/frontend/src/reception/Profile.tsx",
+            title: "Staff Work Profiles",
+            map: ["Reception Module", "Role Boundaries", "Encrypted Hash Modifiers"],
+            desc: "Personal preferences view for the logged-in Receptionist.<br><ul><li><strong>What it does:</strong> Allows staff members to securely mutate their system passwords or upload custom profile avatars.</li><li><strong>Data shown:</strong> Read-only shift assignment logs and aggregated personal completion statistics (e.g., 'Tests booked today').</li><li><strong>Fetches/Sends:</strong> Sends PUT commands to `/api/auth/profile` heavily guarded by local JWT token verifications.</li></ul>",
+            code: `const expireSession = () => {\n  api.post('/auth/logout');\n  router.navigate('/login');\n};`
+          },
+          "rec-set": {
+            path: "/frontend/src/reception/Settings.tsx",
+            title: "Local Machine Preferences",
+            map: ["Reception Module", "Local Storage", "Hardware Pairings"],
+            desc: "Node-level control panel configuring the specific receptionist computer.<br><ul><li><strong>What it does:</strong> Assigns local physical IPs to thermal receipt printers or defines specific notification tone rules.</li><li><strong>Data shown:</strong> Toggle inputs for 'Dark Mode', 'Compact Tables', and external device pairing states.</li><li><strong>How it works:</strong> Avoids the SQLite database completely, saving variables directly into the browser's `localStorage` via Zustand hooks.</li></ul>",
+            code: `const saveHardwareConfigs = (opts) => {\n  localStorage.setItem('local_settings', JSON.stringify(opts));\n};`
+          },
+          "rec-supp": {
+            path: "/frontend/src/reception/Support.tsx",
+            title: "IT Support Ticketing",
+            map: ["Reception Module", "Error Boundry Dump", "Cloud AWS Post"],
+            desc: "Emergency fail-safe enabling direct diagnostic logs transmission.<br><ul><li><strong>What it does:</strong> Packages the system's local SQLite errors alongside console traces during fatal application states.</li><li><strong>Data shown:</strong> A simple priority ticketing form asking the user to describe the clinical hold-up.</li><li><strong>Fetches/Sends:</strong> Forces a direct `HTTPS POST` to an AWS Cloud endpoint completely bypassing the offline application protocols.</li></ul>",
+            code: `const sendCrashReport = async () => {\n  const logs = await captureLocalLogs();\n  api.post('/system/ticket', { logs });\n};`
+          },
+          "rec-anal": {
+            path: "/frontend/src/reception/ReceptionAnalytics.tsx",
+            title: "Reception Flow Metrics",
+            map: ["Reception Module", "Local Map-Reduce", "Canvas Chart Graphing"],
+            desc: "Localized, real-time heatmaps restricted purely to front-desk load data.<br><ul><li><strong>What it does:</strong> Analyzes hourly influx vectors comparing patient waiting times against currently active registration staff.</li><li><strong>Data shown:</strong> Visual radar charts highlighting extreme bottleneck periods and immediate queue saturation percentages.</li><li><strong>How it works:</strong> Computes data linearly via standard JS Map-reductions on the frontend pulling entirely from the active day's local SQL memory.</li></ul>",
+            code: `return <TrafficHeatmap flowData={queueIntensity} />`
+          },
+          "components": {
+            path: "/frontend/src/components/",
+            title: "Global Abstract Pieces",
+            desc: "Modular UI blocks globally mapped cross-directory.<br><ul><li><strong>What it does:</strong> Maintains absolute visual consistency across distinct physical roles stopping any code duplication.</li><li><strong>Data shown:</strong> Core interactive overlays like system-wide Modals, Loading Wheels, and the System Status WebSockets monitor natively.</li><li><strong>How it works:</strong> Exported singularly as abstracted React primitives wrapped heavily with standard prop validations natively mapped.</li></ul>",
+            code: `├─ ProtectedRoute.tsx\n├─ SplashScreen.tsx\n└─ SystemStatusManager.tsx`
+          },
+          "comp-protect": {
+            path: "/frontend/src/components/ProtectedRoute.tsx",
+            title: "Zero-Trust Component",
+            desc: "Higher-Order wrapper protecting unauthorized pathways.<br><ul><li><strong>What it does:</strong> Checks the active session state logic intercepting every internal route prior to resolving React components globally.</li><li><strong>Data shown:</strong> Blocks rendering if validation fails natively, substituting a hard redirect immediately into the secure '/login' space.</li><li><strong>How it works:</strong> Employs React router DOM configurations tying to Zustand states efficiently avoiding repeated network calls explicitly.</li></ul>",
+            code: `export default function ProtectedRoute({ children }) {\n  const { user } = useAuthStore();\n  if (!user) return <Navigate to="/login" />;\n  return children;\n}`
+          },
+          "comp-splash": {
+            path: "/frontend/src/components/SplashScreen.tsx",
+            title: "Bootup Sequence Logic",
+            desc: "Application init screen executing underlying OS hooks.<br><ul><li><strong>What it does:</strong> Disguises the necessary SQLite engine startup timings with a sleek, clinic-branded introductory animation natively.</li><li><strong>Data shown:</strong> Progress indicators reflecting the exact offline connection sequence securely locking users from accessing frozen UI states.</li><li><strong>How it works:</strong> Uses `useEffect()` mapping to arbitrary 4000ms thresholds matching backend Node launch protocols consistently.</li></ul>",
+            code: `export default function SplashScreen({ onComplete }) {\n  useEffect(() => setTimeout(onComplete, 4000), []);\n}`
+          },
+          "store": {
+            path: "/frontend/src/store/",
+            title: "Offline Client States",
+            desc: "The global memory state un-opinionated engine.<br><ul><li><strong>What it does:</strong> Decouples react rendering layers from the actual business variable memory avoiding immense prop-drilling explicitly.</li><li><strong>Architecture:</strong> Constructed using Zustand—a massively scalable bear-bones state system heavily outperforming standard context states actively.</li><li><strong>How it works:</strong> Allows immediate persistence natively binding specific branches to global `localStorage` across hot desktop reloads implicitly.</li></ul>",
+            code: `import { create } from 'zustand';`
+          },
+          "store-theme": {
+            path: "/frontend/src/store/useThemeStore.ts",
+            title: "Contextual Theme Toggling",
+            desc: "Color state abstraction across the desktop.<br><ul><li><strong>What it does:</strong> Instructs absolute native DOM control mapping specifically `data-theme` modifiers to the core exact `body` nodes globally.</li><li><strong>Data shown:</strong> Only an arbitrary active Boolean flag `isDark` controlling hundreds of CSS Variables synchronously.</li><li><strong>Fetches/Sends:</strong> Hooks directly into local-storage remembering aesthetic preference even when system closes.</li></ul>",
+            code: `export const useThemeStore = create(set => ({\n  isDark: true,\n  toggle: () => set(s => ({ isDark: !s.isDark }))\n}));`
+          },
+          "app-tsx": {
+            path: "/frontend/src/App.tsx",
+            title: "Master React Router",
+            desc: "The absolute top-level file of the React application.<br><ul><li><strong>What it does:</strong> Constructs physical route paths natively tying literal URLs against nested React components mapping out the navigation graph exactly.</li><li><strong>Data shown:</strong> Houses the absolute global `<Toaster>` popups and universal modal providers operating directly above all distinct pages dynamically.</li><li><strong>How it works:</strong> Exerts exact `<ProtectedRoute>` wrappers isolating entire domains explicitly stopping zero-day directory transversals securely.</li></ul>",
+            code: `function App() {\n  return (\n    <Router>\n      <Routes>\n        <Route path="/admin/*" element={<ProtectedRoute><AdminRoutes /></ProtectedRoute>} />\n      </Routes>\n    </Router>\n  );\n}`
+          },
+          "main-tsx": {
+            path: "/frontend/src/main.tsx",
+            title: "React DOM Root Binding",
+            desc: "Physical entry-point binding React to HTML natively.<br><ul><li><strong>What it does:</strong> Initiates React 19 concurrent properties mounting massive component trees over the single `<div id=\"root\">` strictly statically.</li><li><strong>Architecture:</strong> Imports CSS normalization globally ensuring visual cohesiveness prior to initializing DOM paints efficiently explicitly.</li><li><strong>How it works:</strong> Implements the new `createRoot()` procedure securely binding React 19 executing directly inside Tauri's WebViews isolated exactly.</li></ul>",
+            code: `import { createRoot } from 'react-dom/client';\ncreateRoot(document.getElementById('root')!).render(<App />);`
+          },
+          "server": {
+            path: "/server/",
+            title: "Embedded NodeJS Layer",
+            desc: "The totally offline embedded local Express container natively wrapped.<br><ul><li><strong>What it does:</strong> Removes all reliance on external internet connections processing intricate clinical procedures strictly internally.</li><li><strong>Architecture:</strong> Constructed sequentially mapping RESTful Express modules, global Express Middlewares, and internal Python/Bash Daemon scripts together natively.</li><li><strong>How it works:</strong> Initiated automatically as a hidden subprocess specifically by the Tauri Rust launcher upon desktop boot.</li></ul>",
+            code: `├─ src/\n│  ├─ api/\n│  ├─ config/\n│  ├─ middleware/\n│  └─ scripts/`
+          },
+          "api": {
+            path: "/server/src/api/",
+            title: "Routing Logic Partition",
+            desc: "Encapsulates massive volumes of disparate logic separating scopes securely.<br><ul><li><strong>What it does:</strong> Implements distinct Express `Router()` channels completely sandboxed from one another.</li><li><strong>Data shown:</strong> Segregates logic paths defining physical domains like `/admin` operations versus `/reception` activities implicitly.</li><li><strong>How it works:</strong> Injects different Authorization token middlewares before connecting domains to database hooks.</li></ul>",
+            code: `app.use('/api/admin', adminRoutes);\napp.use('/api/reception', receptionRoutes);`
+          },
+          "api-admin": {
+            path: "/server/src/api/admin/",
+            title: "Protected API Handlers",
+            desc: "Domain restricted purely to administrative privileges natively.<br><ul><li><strong>What it does:</strong> Exposes extremely dangerous CRUD parameters enabling permanent local modifications if permitted.</li><li><strong>Architecture:</strong> Isolates database drops and structural schema mutations completely explicitly.</li><li><strong>How it works:</strong> Demands High-Level JWT deciphering from the local Admin instance prior to execution.</li></ul>",
+            code: `// Express.Router() instance handling specific admin paths`
+          },
+          "api-admin-router": {
+            path: "/server/src/api/admin/router.js",
+            title: "Admin Express Router",
+            desc: "Primary data-aggregation file for the Director Dashboards.<br><ul><li><strong>What it does:</strong> Compiles dense matrix queries spanning potentially millions of SQLite rows.</li><li><strong>Data shown:</strong> Summons financial data, chronological patient distributions, and daily generated revenue natively.</li><li><strong>Fetches/Sends:</strong> Executes `SELECT SUM()` and complex `GROUP BY` logic directly communicating to the local SQLite pool explicitly.</li></ul>",
+            code: `router.get('/dashboard/kpis', authMid, async (req, res) => {\n  const data = await pool.query('SELECT SUM(total) FROM payments');\n  res.json({ success: true, total: data[0].sum });\n});`
+          },
+          "api-reception": {
+            path: "/server/src/api/reception/",
+            title: "Reception API Clusters",
+            desc: "Massive interconnected hub handling chaotic clinical inputs concurrently.<br><ul><li><strong>What it does:</strong> Sustains deep asynchronous throughput accommodating thousands of daily reception events natively.</li><li><strong>Architecture:</strong> Splits logic into micro-handlers (Billing, Sockets, Router) mapping clean boundaries physically.</li><li><strong>How it works:</strong> Integrates robust local transaction locks stopping race-conditions between multiple receptionist desktops.</li></ul>",
+            code: `├─ router.js\n├─ sync.js\n└─ billing.js`
+          },
+          "api-rec-router": {
+            path: "/server/src/api/reception/router.js",
+            title: "Inlet Reception Pipes",
+            desc: "The critical entry pipe for all incoming Reception UI transmissions.<br><ul><li><strong>What it does:</strong> Validates intricate Object structures natively guaranteeing data integrity strictly prior to disk writing.</li><li><strong>Fetches/Sends:</strong> Houses the `/register` logic orchestrating atomic SQLite `BEGIN TRANSACTION` blocks specifically avoiding corrupted inputs.</li></ul>",
+            code: `router.post('/register', async (req, res) => {\n  /* Handles split transactions across DB models */\n});`
+          },
+          "api-rec-sync": {
+            path: "/server/src/api/reception/sync.js",
+            title: "Live Socket Propagation",
+            desc: "Local area network event transmitter.<br><ul><li><strong>What it does:</strong> Emits physical UDP/TCP pings notifying all locally connected frontend windows of state changes explicitly.</li><li><strong>Data shown:</strong> Publishes queue increments, completed lab checks, or newly processed bills immediately.</li><li><strong>How it works:</strong> Employs `socket.io` broadcasting strictly exclusively overriding the need for chaotic polling HTTP protocols natively.</li></ul>",
+            code: `export const notifyQueueUpdate = (patientId) => {\n  io.emit('queue_refreshed', { id: patientId });\n};`
+          },
+          "api-rec-bill": {
+            path: "/server/src/api/reception/billing.js",
+            title: "Deep Math Ledger Engine",
+            desc: "Asynchronous mathematical ledger processor.<br><ul><li><strong>What it does:</strong> Dissects composite transactions determining how to distribute exact tax portions across individual services implicitly.</li><li><strong>Fetches/Sends:</strong> Commits distinct partial values into `test_payments` ensuring 100% auditable accounting pathways locally.</li><li><strong>How it works:</strong> Invokes Node.js asynchronous procedures blocking parallel write attempts natively maintaining precise monetary states.</li></ul>",
+            code: `const processSplit = async (ptId, cashAmt, upiAmt) => {\n  await pool.run('INSERT INTO test_payments (modes, amts) VALUES...', ...);\n};`
+          },
+          "config": {
+            path: "/server/src/config/",
+            title: "Core Infrastructure Hooks",
+            desc: "Physical environment bootstrapping directory.<br><ul><li><strong>What it does:</strong> Marshals deep operating system environment variables mapping the embedded Node process to system ports securely.</li><li><strong>How it works:</strong> Validates `local_master.sqlite` structures before injecting the global database pool implicitly into the middleware layers.</li></ul>",
+            code: `require('dotenv').config();\nconst pool = initDatabase();`
+          },
+          "conf-db": {
+            path: "/server/src/config/db.js",
+            title: "SQLite Connection Driver",
+            desc: "Low-level local storage optimization module.<br><ul><li><strong>What it does:</strong> Avoids total database locks allowing Reception and Admin computers to process queries entirely concurrently offline.</li><li><strong>Architecture:</strong> Sets critical SQLite configurations notably activating `PRAGMA journal_mode = WAL;` (Write-Ahead Logging).</li><li><strong>How it works:</strong> Maintains constant high-throughput file descriptors specifically to outpace traditional cloud database lag inherently.</li></ul>",
+            code: `const sqlite3 = require('sqlite3').verbose();\nconst pool = new sqlite3.Database('./local_master.sqlite');\npool.run('PRAGMA journal_mode = WAL;');`
+          },
+          "middleware": {
+            path: "/server/src/middleware/",
+            title: "Request Interceptors",
+            desc: "Protective screening layer wrapping the internal API.<br><ul><li><strong>What it does:</strong> Halts cross-site malicous payloads entirely intercepting HTTP packets identically before routing safely.</li><li><strong>Data shown:</strong> Configures max physical upload sizes explicitly allowing `50mb` blocks for extensive medical scans natively.</li><li><strong>How it works:</strong> Applies CORS boundaries enforcing identical internal LAN communication exclusively.</li></ul>",
+            code: `app.use(express.json({ limit: '50mb' })); // Allows medical uploads`
+          },
+          "mid-auth": {
+            path: "/server/src/middleware/auth.js",
+            title: "JWT Decoder Agent",
+            desc: "Cryptographic local authenticator function.<br><ul><li><strong>What it does:</strong> Validates absolute secure local tokens without ever requiring a remote AWS check strictly.</li><li><strong>Fetches/Sends:</strong> Disassembles `req.headers['authorization']` natively parsing session IDs mapping uniquely to staff permissions.</li><li><strong>How it works:</strong> Triggers instantaneous `401 Unauthorized` blocks halting further Node execution pipelines safely.</li></ul>",
+            code: `const token = req.headers['authorization']?.split(' ')[1];\nif(!token) return res.status(401).send('Unauthorized');`
+          },
+          "scripts": {
+            path: "/server/src/scripts/",
+            title: "Automated Daemons",
+            desc: "Unprompted machine operations directories.<br><ul><li><strong>What it does:</strong> Executes asynchronous chron jobs completely invisible to the front-desk clinicians explicitly.</li><li><strong>Architecture:</strong> Isolates heavy data mutations and cloud API communications uniquely dropping UI burden entirely natively.</li></ul>",
+            code: `├─ syncEngine.js\n└─ repair-registrations.js`
+          },
+          "scripts-sync": {
+            path: "/server/src/scripts/syncEngine.js",
+            title: "Remote Payload Propagator",
+            desc: "Self-healing cloud connectivity module.<br><ul><li><strong>What it does:</strong> Ensures the offline global continuity safely checking if the hospital's ISP connection has restored secretly.</li><li><strong>Data shown:</strong> Diffs local SQLite events sequentially pushing packaged `offline_queues` up towards AWS seamlessly.</li><li><strong>How it works:</strong> Sleeps silently waking strictly on `setInterval` hooks explicitly avoiding local RAM consumption natively.</li></ul>",
+            code: `setInterval(async () => {\n  if(checkNetwork()) await pushQueuedOfflineEvents();\n}, 300000); // 5 min background cycles`
+          },
+          "server-js": {
+            path: "/server/src/server.js",
+            title: "Master Node Executor",
+            desc: "Absolute central nervous system for the backend architecture.<br><ul><li><strong>What it does:</strong> Spawns the Express process on localhost linking CORS vectors, mounting static assets, and defining global API fallback routes.</li><li><strong>Data shown:</strong> Emits extreme high-level Cache-Busting protocols instructing local Chromium processes to explicitly purge local states exclusively.</li><li><strong>How it works:</strong> Intersects internal file uploads mapping `express.static` to raw Desktop partitions securely natively.</li></ul>",
+            code: `app.use(cors());\napp.use('/uploads', express.static('../uploads'));\napp.use(express.static('../../frontend/dist'));\napp.listen(PORT, '0.0.0.0');`
+          },
+          "src-tauri": {
+            path: "/src-tauri/",
+            title: "Rust Application Shell",
+            desc: "Physical compilation container synthesizing WEB languages into OS binaries.<br><ul><li><strong>What it does:</strong> Encompasses the React Frontend, the Node runtime, and the local CLI into an extremely powerful native executable strictly.</li><li><strong>Architecture:</strong> Exposes direct memory management interfaces vastly outperforming standard Chromium WebContainers identically.</li></ul>",
+            code: `├─ src/\n├─ capabilities/\n└─ tauri.conf.json`
+          },
+          "tauri-src": {
+            path: "/src-tauri/src/",
+            title: "Hardware Execution Directives",
+            desc: "Deep core engine mapping Rust parameters directly to OS instructions.<br><ul><li><strong>What it does:</strong> Contains the literal main process bindings executing specifically compiled `.exe` or `.deb` packages effortlessly.</li><li><strong>Fetches/Sends:</strong> Declares asynchronous system functions invoking local USB, filesystem, and native peripheral hardware explicitly natively.</li></ul>",
+            code: `├─ main.rs\n└─ commands.rs`
+          },
+          "tauri-main": {
+            path: "/src-tauri/src/main.rs",
+            title: "Binary Origin Execution",
+            desc: "The literal physical entry point of the executable application.<br><ul><li><strong>What it does:</strong> Configures window parameters launching `prospine_app_lib::run()` directly securely omitting debug trace channels specifically during active production limits.</li><li><strong>How it works:</strong> Strips absolute Windows/Linux console outputs natively prioritizing high-performance silent background processes explicitly.</li></ul>",
+            code: `#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]\nfn main() {\n    prospine_app_lib::run()\n}`
+          },
+          "capabilities": {
+            path: "/src-tauri/capabilities/",
+            title: "Granular Security Matrix",
+            desc: "Zero-Trust parameter configurations restricting Javascript payloads.<br><ul><li><strong>What it does:</strong> Prohibitively scopes specific directory traversals uniquely barring any cross-site web instructions from corrupting local hospital structures explicitly.</li><li><strong>Architecture:</strong> Segmented into tight JSON structures evaluated identically by the Rust Compiler explicitly during initialization natively.</li></ul>",
+            code: `├─ strict-database.json\n└─ core-windows.json`
+          },
+          "cap-strict": {
+            path: "/src-tauri/capabilities/strict-database.json",
+            title: "Host File Restriction Config",
+            desc: "Unorthodox security file locking standard OS filesystem hooks.<br><ul><li><strong>What it does:</strong> Disables standard WebKit physical file requests explicitly bounding the application specifically to the `$APP/database/` vector natively.</li><li><strong>Architecture:</strong> Drops extraneous privileges natively enforcing strict `sql:query` whitelists exclusively nulling any unauthorized external SQLite alterations.</li></ul>",
+            code: `{\n  "identifier": "strict-database",\n  "permissions": ["sql:query", "fs:read", "fs:write"],\n  "scope": ["$APP/database/*"]\n}`
+          },
+          "tauri-conf": {
+            path: "/src-tauri/tauri.conf.json",
+            title: "Tauri Compilation Manifest",
+            desc: "Core control structure managing exact binary builds and configurations.<br><ul><li><strong>What it does:</strong> Defines precise pre-launch procedures invoking standard `npm run server` hooks seamlessly directly beneath the web process execution.</li><li><strong>Data shown:</strong> Explicit product identities connecting internal hardware signatures accurately matching physical branding tokens inherently natively.</li></ul>",
+            code: `{\n  "build": {\n    "beforeDevCommand": "npm run server",\n    "frontendDist": "../frontend/dist"\n  },\n  "productName": "PhysioEZ Desktop"\n}`
+          }
+        };
+
+        const folders = document.querySelectorAll('.tree-folder .folder-label');
+        const files = document.querySelectorAll('.tree-file');
+        const viewerTitle = document.getElementById('viewer-path');
+        const viewerContent = document.getElementById('viewer-content');
+
+        function renderAnatomyContent(key) {
+          const data = anatomyData[key];
+          if (!data) return;
+          
+          if(viewerTitle) viewerTitle.innerHTML = data.path;
+          if(viewerContent) {
+            let mapHTML = '';
+            if(data.map && data.map.length > 0) {
+              const nodes = data.map.map((node, i) => {
+                if(i === data.map.length - 1) {
+                  return `<div class="map-node"><i class="ph ph-check-circle"></i> ${node}</div>`;
+                }
+                return `
+                  <div class="map-node"><i class="ph ph-record"></i> ${node}</div>
+                  <div class="map-arrow"><i class="ph ph-arrow-down"></i></div>
+                `;
+              }).join('');
+              
+              mapHTML = `<div class="viewer-module-map">${nodes}</div>`;
+            }
+
+            viewerContent.innerHTML = `
+              <h4 class="viewer-pane-title">${data.title}</h4>
+              ${mapHTML}
+              <div class="viewer-pane-desc">${data.desc}</div>
+              <div class="viewer-code-block">${data.code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+            `;
+          }
+        }
+
+        // Handle folder toggle and display
+        folders.forEach(label => {
+          label.addEventListener('click', (e) => {
+            const folderLi = e.currentTarget.parentElement;
+            const nested = folderLi.querySelector('.tree-nested');
+            const icon = label.querySelector('i');
+            const targetId = folderLi.getAttribute('data-target');
+            
+            if (nested && nested.style.display === 'block') {
+              nested.style.display = 'none';
+              if(icon) {
+                icon.classList.remove('ph-folder-open');
+                icon.classList.add('ph-folder');
+              }
+              folderLi.classList.remove('tree-expanded');
+            } else if (nested) {
+              nested.style.display = 'block';
+              if(icon) {
+                icon.classList.remove('ph-folder');
+                icon.classList.add('ph-folder-open');
+              }
+              folderLi.classList.add('tree-expanded');
+            }
+            
+            // Select folder content
+            files.forEach(f => f.classList.remove('active'));
+            renderAnatomyContent(targetId);
+          });
+        });
+
+        // Handle file click
+        files.forEach(file => {
+          file.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            const targetId = file.getAttribute('data-target');
+
+            if (targetId === 'rec-more') {
+               const folderUI = file.closest('.tree-nested');
+               const parent = file.parentElement;
+               // Overwrite hidden lines specifically preserving the folder scope
+               const hiddenLinesHTML = `
+                        <li class="tree-file" data-target="rec-test-sched" style="padding-left: 76px;"><i class="ph ph-file-code"></i> TestSchedule.tsx</li>
+                        <li class="tree-file" data-target="rec-tests" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Tests.tsx</li>
+                        <li class="tree-file" data-target="rec-pat" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Patients.tsx</li>
+                        <li class="tree-file" data-target="rec-bill" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Billing.tsx</li>
+                        <li class="tree-file" data-target="rec-att" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Attendance.tsx</li>
+                        <li class="tree-file" data-target="rec-exp" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Expenses.tsx</li>
+                        <li class="tree-file" data-target="rec-feed" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Feedback.tsx</li>
+                        <li class="tree-file" data-target="rec-rep" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Reports.tsx</li>
+                        <li class="tree-file" data-target="rec-can-reg" style="padding-left: 76px;"><i class="ph ph-file-code"></i> CancelledRegistrations.tsx</li>
+                        <li class="tree-file" data-target="rec-can-test" style="padding-left: 76px;"><i class="ph ph-file-code"></i> CancelledTests.tsx</li>
+                        <li class="tree-file" data-target="rec-prof" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Profile.tsx</li>
+                        <li class="tree-file" data-target="rec-set" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Settings.tsx</li>
+                        <li class="tree-file" data-target="rec-supp" style="padding-left: 76px;"><i class="ph ph-file-code"></i> Support.tsx</li>
+                        <li class="tree-file" data-target="rec-anal" style="padding-left: 76px;"><i class="ph ph-file-code"></i> ReceptionAnalytics.tsx</li>
+               `;
+               file.outerHTML = hiddenLinesHTML;
+               
+               // Re-bind listeners to newly created UI lines immediately
+               const freshFiles = parent.querySelectorAll('.tree-file');
+               freshFiles.forEach(ff => {
+                  ff.onclick = (e2) => {
+                     e2.stopPropagation();
+                     document.querySelectorAll('.tree-file').forEach(t => t.classList.remove('active'));
+                     ff.classList.add('active');
+                     renderAnatomyContent(ff.getAttribute('data-target'));
+                  }
+               });
+               return; // halt execution preventing unmapped error
+            }
+
+            document.querySelectorAll('.tree-file').forEach(f => f.classList.remove('active'));
+            file.classList.add('active');
+            
+            renderAnatomyContent(targetId);
+          });
+        });
+
+        // Init
+        renderAnatomyContent('admin');
       });
     </script>
   </body>
